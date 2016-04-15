@@ -1,0 +1,184 @@
+.navbar.navbar-default {
+  position: absolute;
+  background-color: rgba(0,0,0,0.5);
+  box-shadow: 0 0 40px transparent;
+  border-style: none;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar.navbar-default.navbar-normalize {
+  position: fixed;
+  background-color: rgba(90,80,80,1);
+  box-shadow: 0 0 40px #333;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar.navbar-default .navbar-brand,
+.navbar.navbar-default .navbar-nav>li>a {
+  color: white;
+  cursor: pointer;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #494343;
+}
+
+.navbar-nav {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.navbar.navbar-default .navbar-brand {
+  /*text-transform: uppercase;*/
+  font-size: 2em;
+  font-weight: 500;
+  padding-top: 42px;
+  padding-bottom: 35px;
+  height: initial;
+}
+
+
+  .navbar.navbar-default .navbar-brand img {
+    display: inline-block !important;
+    width: 50px;
+  }
+@media (max-width: 992px) {
+  .navbar.navbar-default .navbar-brand {
+    font-size: 1.5em;
+    padding-top: 24px;
+    padding-bottom: 27px;
+  }
+  .navbar.navbar-default .navbar-brand>span {
+    margin-left: 10px;
+    vertical-align: sub;
+  }
+}
+
+.navbar.navbar-default .navbar-nav>li>a {
+  text-transform: uppercase;
+  padding-top: 40px;
+  padding-bottom: 37px;
+}
+
+@media (max-width: 768px) {
+  .navbar.navbar-default .navbar-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 17px;
+  }
+}
+
+.navbar.navbar-default .navbar-nav>li>a.btn-subscribe {
+  color: #a2d4ab;
+  background-color: #494343;
+  border-color: #494343;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar.navbar-default .navbar-nav>li>a.btn-subscribe:hover,
+.navbar.navbar-default .navbar-nav>li>a.btn-subscribe:active,
+.navbar.navbar-default .navbar-nav>li>a.btn-subscribe:focus {
+  color: #494343;
+  background-color: #a2d4ab;
+  border-color: #a2d4ab;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+@media (min-width: 768px) {
+  .navbar.navbar-default .navbar-nav>li>a.btn-subscribe {
+    padding-top: 12px;
+    padding-bottom: 8px;
+    margin-top: 24px;
+    margin-right: 24px;
+    margin-left: 10px;
+  }
+}
+
+.km-navbar-brand a {
+  position: absolute;
+  left: calc(50% - 60px);
+  top: 10px;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar.navbar-default.navbar-normalize .km-navbar-brand a {
+  left: calc(50% - 40px);
+  top: 8px;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar.navbar-default .km-navbar-brand a img {
+  width: 120px;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar.navbar-default.navbar-normalize .km-navbar-brand a img {
+  width: 80px;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+
+.navbar.navbar-default .navbar-brand:hover,
+.navbar.navbar-default .navbar-nav>li>a:hover,
+.navbar.navbar-default .navbar-nav>li.active>a {
+  color: #a2d4ab;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+  background-color: transparent;
+}
+
+.navbar.navbar-default .navbar-toggle {
+  margin-top: 29px;
+  border-style: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.navbar-toggle .icon-bar {
+  width: 20px;
+  height: 3px;
+}
+
+.navbar-toggle .icon-bar+.icon-bar {
+  margin-top: 6px;
+}

@@ -9,308 +9,125 @@ animate: true
 ---
 
 <section id="jumbotron" class="km-jumbotron" style="background-image:url('{{ site.baseurl }}/images/bg.jpg')">
-  <section class="km-jumbotron-overlay">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="km-jumbotron-margin-top"></div>
-          <p class="km-jumbotron-title">
-            Lorem ipsum dolor sit amet
-          </p>
-          <p class="km-jumbotron-subtext">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-              diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat.
-          </p>
-          <div class="text-center">
-            <a class="btn btn-default km-btn km-jumbotron-btn km-btn-lg" href="{{ site.baseurl }}#stories">Stories</a>
-          </div>
-
-          <a class="a-arrow" href="{{ site.baseurl }}#content">
-            <svg class="arrows">
-              <path class="a1" d="M0 0 L30 20 L60 0"></path>
-  						<!--path class="a1" d="M0 0 L30 32 L60 0"></path>
-  						<path class="a2" d="M0 20 L30 52 L60 20"></path>
-  						<path class="a3" d="M0 40 L30 72 L60 40"></path-->
-  					</svg>
-          </a>
-
-          <div class="km-jumbotron-margin-bottom"></div>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="slick-jumbotron">
+          {% include slick-jumbotron-slide.html %}
+          {% include slick-jumbotron-slide.html %}
+          {% include slick-jumbotron-slide.html %}
         </div>
       </div>
     </div>
-  </section>
+  </div>
 </section>
 
 <section>
   <a class="anchor" id="content"></a>
-<section class="section-main section-imagebg" style="background-image:url('{{ site.baseurl }}/images/bg-white.jpg');">
-  <a class="anchor" id="stories"></a>
-  <div class="container-fluid">
-    <div class="row row-limit">
-      <div class="col-lg-12">
-        <h1>
-          Stories
-        </h1>
 
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-            <a class="anchor-stories" href="{{ site.baseurl }}/story">
-              <div class="panel panel-default panel-stories">
-                <div class="panel-heading">
-                  <img class="img-responsive img-stories" src="{{ site.baseurl }}/images/filler-stories.jpg">
-                  <h3 class="h3-stories">Lorem ipsum dolor</h3>
-                </div>
-                <div class="panel-body">
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                    diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                    aliquam erat volutpat.</p>
-                </div>
-                <div class="panel-footer"><button class="btn btn-default km-btn btn-block">Read More &gt;</button></div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-            <a class="anchor-stories" href="{{ site.baseurl }}/story">
-              <div class="panel panel-default panel-stories">
-                <div class="panel-heading">
-                  <img class="img-responsive img-stories" src="{{ site.baseurl }}/images/filler-stories.jpg">
-                  <h3 class="h3-stories">Lorem ipsum dolor</h3>
-                </div>
-                <div class="panel-body">
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                    diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                    aliquam erat volutpat.</p>
-                </div>
-                <div class="panel-footer"><button class="btn btn-default km-btn btn-block">Read More &gt;</button></div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-            <a class="anchor-stories" href="{{ site.baseurl }}/story">
-              <div class="panel panel-default panel-stories">
-                <div class="panel-heading">
-                  <img class="img-responsive img-stories" src="{{ site.baseurl }}/images/filler-stories.jpg">
-                  <h3 class="h3-stories">Lorem ipsum dolor</h3>
-                </div>
-                <div class="panel-body">
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                    diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                    aliquam erat volutpat.</p>
-                </div>
-                <div class="panel-footer"><button class="btn btn-default km-btn btn-block">Read More &gt;</button></div>
-              </div>
-            </a>
-          </div>
+  <section>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h1>Featured Art Events</h1>
         </div>
-        <div class="row hidden-xs" style="margin-top:10px;" >
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-            <a class="anchor-stories" href="{{ site.baseurl }}/story">
-              <div class="panel panel-default panel-stories">
-                <div class="panel-heading">
-                  <img class="img-responsive img-stories" src="{{ site.baseurl }}/images/filler-stories.jpg">
-                  <h3 class="h3-stories">Lorem ipsum dolor</h3>
-                </div>
-                <div class="panel-body">
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                    diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                    aliquam erat volutpat.</p>
-                </div>
-                <div class="panel-footer"><button class="btn btn-default km-btn btn-block">Read More &gt;</button></div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-            <a class="anchor-stories" href="{{ site.baseurl }}/story">
-              <div class="panel panel-default panel-stories">
-                <div class="panel-heading">
-                  <img class="img-responsive img-stories" src="{{ site.baseurl }}/images/filler-stories.jpg">
-                  <h3 class="h3-stories">Lorem ipsum dolor</h3>
-                </div>
-                <div class="panel-body">
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                    diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                    aliquam erat volutpat.</p>
-                </div>
-                <div class="panel-footer"><button class="btn btn-default km-btn btn-block">Read More &gt;</button></div>
-              </div>
-            </a>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 ">
-            <a class="anchor-stories" href="{{ site.baseurl }}/story">
-              <div class="panel panel-default panel-stories">
-                <div class="panel-heading">
-                  <img class="img-responsive img-stories" src="{{ site.baseurl }}/images/filler-stories.jpg">
-                  <h3 class="h3-stories">Lorem ipsum dolor</h3>
-                </div>
-                <div class="panel-body">
-                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                    diam nonummy nibh euismod tincidunt ut laoreet dolore magna
-                    aliquam erat volutpat.</p>
-                </div>
-                <div class="panel-footer"><button class="btn btn-default km-btn btn-block">Read More &gt;</button></div>
-              </div>
-            </a>
-          </div>
+        <div class="col-lg-4">
+          {% include panel-event.html %}
         </div>
-      </div>
-      <div class="col-lg-12 text-center">
-        <a class="btn btn-default km-btn km-btn-lg">All Stories</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-main section-gradient">
-  <a class="anchor" id="about"></a>
-  <div class="container-fluid">
-    <div class="row row-limit">
-      <div class="col-lg-12">
-        <h1>
-          The Campaign
-        </h1>
-        <img class="img-logo img-responsive" src="{{ site.baseurl }}/images/logo-full.png">
-
-        <div class="row row-limit-p">
-          <div class="col-lg-12">
-            <p class="p-em">
-              Sometimes, quitting is the best way to win.
-            </p>
-            <p>
-              Walang Wagi Sa Yosi is lorem ipsum dolor sit
-              amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod
-              tincidunt ut laoreet dolore magna aliquam erat volutpat. Emotional.
-            </p>
-          </div>
+        <div class="col-lg-4">
+          {% include panel-event.html %}
+        </div>
+        <div class="col-lg-4">
+          {% include panel-event.html %}
+        </div>
+        <div class="col-lg-12">
+          <a>More Events</a>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section-main section-dark">
-  <a class="anchor" id="info"></a>
-  <div class="container-fluid">
-
-    <div class="row row-limit">
-      <div class="col-lg-12">
-        <h1>
-          Smoking in Numbers
-        </h1>
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-numbers">
-            <img class="img-responsive img-numbers" src="{{ site.baseurl }}/images/lungs-monoline.png">
-            <p>Smoking kills 10 Filipinos every hour due to cancer, stroke, lung and heart diseases brought on
-              by cigarette smoking. (World Health Organization)</p>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-numbers">
-            <img class="img-responsive img-numbers" src="{{ site.baseurl }}/images/lungs-monoline.png">
-            <p>Twenty­-eight percent or 17.3 million Filipino adults age 15 years and older are current tobacco
-              smokers, according to the results of the 2009 Global Adult Tobacco Survey (GATS).</p>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-numbers hidden-xs">
-            <img class="img-responsive img-numbers" src="{{ site.baseurl }}/images/lungs-monoline.png">
-            <p>23 percent of Filipino adults are daily tobacco smokers: 38 percent for males and 7 percent for
-              females. (Philippine Statistics Authority)</p>
+  <section>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h1>Featured Workshop</h1>
+        </div>
+        <div class="col-lg-7">
+          <div class="slick-workshop">
+            {% include slick-slide.html %}
+            {% include slick-slide.html %}
+            {% include slick-slide.html %}
           </div>
         </div>
-      </div>
-      <div class="col-lg-12 text-center">
-        <a class="btn btn-default km-btn km-btn-lg">See More</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section-main section-dark">
-  <div class="container-fluid">
-
-    <div class="row row-limit">
-      <div class="col-lg-12">
-        <h1>
-          Effects of Smoking
-        </h1>
-        <div class="row">
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-effects">
-            <img class="img-responsive img-effects" src="{{ site.baseurl }}/images/lungs-monoline.png">
-            <h2>Weakened Immune System</h2>
-            <p>Cigarette smoke contains high levels of tar and other chemicals, which can make your immune
-              system less effective at fighting off infections. This means you're more likely to get sick, and are
-              vulnerable to even the common cold and the flu.</p>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-effects">
-            <img class="img-responsive img-effects" src="{{ site.baseurl }}/images/lungs-monoline.png">
-            <h2>A Chance for Cancer</h2>
-            <p>A single cigarette contains over 4,800 chemicals, 69 of which are known to cause cancer.
-              Smoking gives cancer a chance to take over your body and increases the risks of getting more smoking-
-              related diseases. Over 30% of cancer could be prevented by avoiding tobacco and alcohol, having a
-              healthy diet and physical activity. Don’t give cancer a chance.</p>
-          </div>
-          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 col-effects hidden-xs">
-            <img class="img-responsive img-effects" src="{{ site.baseurl }}/images/lungs-monoline.png">
-            <h2>Issue of the Heart</h2>
-            <p>The chemicals in tobacco smoke harm your blood cells. Smoking raises blood pressure,
-              which increases the risk of stroke. It can also can damage the function of your heart and the
-              structure and function of your blood vessels.  Although nicotine is the main active agent in
-              cigarette smoke, other chemicals and compounds such as tar and carbon monoxide are also
-              harmful to your heart in many ways.</p>
-          </div>
+        <div class="col-lg-5">
+          <h2>Workshop Title</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          </p>
+          <a>Learn More</a>
+        </div>
+        <div class="col-lg-12">
+          <a>All Workshops</a>
         </div>
       </div>
-      <div class="col-lg-12 text-center">
-        <a class="btn btn-default km-btn km-btn-lg">See More</a>
+    </div>
+  </section>
+
+  <section>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h1>Featured Artist</h1>
+        </div>
+        <div class="col-lg-5">
+          <div></div>
+          <h2>Artist Name</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="slick-artist">
+            {% include slick-slide.html %}
+            {% include slick-slide.html %}
+            {% include slick-slide.html %}
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <a>All Artists</a>
+        </div>
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<section class="section-main section-imagebg" style="background-image:url('{{ site.baseurl }}/images/bg-white.jpg');">
-  <div class="container-fluid">
-
-    <div class="row row-limit">
-      <div class="col-lg-12">
-        <h1>
-          Graphic Health Warnings
-        </h1>
-        <div class="row">
-          <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-            <div class="slick-ghw-for">
-              <div><img class="img-responsive" src="{{ site.baseurl }}/images/lungs-monoline.png"></div>
-              <div><img class="img-responsive" src="{{ site.baseurl }}/images/logo-full.png"></div>
-              <div><img class="img-responsive" src="{{ site.baseurl }}/images/lungs-monoline.png"></div>
-            </div>
-          </div>
-          <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
-            <section class="hidden-xs" id="section-copy-source">
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-              diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing
-              elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-              magna aliquam erat volutpat.</p>
-              <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-              diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
-              erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing
-              elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore
-              magna aliquam erat volutpat.</p>
-            </section>
-            <div class="slick-ghw-nav">
-              <div><img class="img-responsive" src="{{ site.baseurl }}/images/lungs-monoline.png"></div>
-              <div><img class="img-responsive" src="{{ site.baseurl }}/images/logo-full.png"></div>
-              <div><img class="img-responsive" src="{{ site.baseurl }}/images/lungs-monoline.png"></div>
-            </div>
-            <section class="visible-xs" id="section-copy-destination"></section>
-
-            <script>
-              var firstDivContent = document.getElementById('section-copy-source');
-              var secondDivContent = document.getElementById('section-copy-destination');
-              secondDivContent.innerHTML = firstDivContent.innerHTML;
-            </script>
-
-          </div>
+  <section>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <img>
+          <h1>Erehwon
+            <small>Art Foundation, Inc.</small>
+          </h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          </p>
+        </div>
+        <div class="col-lg-12">
+          <a>About Us</a>
         </div>
       </div>
     </div>
 
-  </div>
+  </section>
+
 </section>

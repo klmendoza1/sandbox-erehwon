@@ -1,17 +1,87 @@
-.slick-ghw-for, .slick-ghw-nav {
+
+.slick-jumbotron {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 0;
+}
+
+
+.slick-jumbotron-panel {
+  padding-top: 48.5px;
+}
+
+.slick-prev,
+.slick-next {
+  height: 100%;
+  z-index: 1;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-jumbotron-panel-exhibit {
+  height: 100vh;
+  min-height: 640px;
+  max-height: 1200px;
+}
+
+.slick-jumbotron-panel-content-outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.slick-jumbotron-panel-content-middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.slick-jumbotron-panel-content-inner {
+    margin-left: auto;
+    margin-right: auto;
+    width: /*whatever width you want*/;
+}
+
+.slick-jumbotron-panel-content {
 
 }
 
-@media (max-width: 768px) {
-  .slick-ghw-for, .slick-ghw-nav {
-    margin-bottom: 30px;
-    max-width: 360px;
-    margin-left: auto;
-    margin-right: auto;
+.slick-jumbotron-panel-exhibit .span-artist {
+  display: block;
+  text-align: center;
+}
+
+.slick-jumbotron-panel-exhibit .h1-title {
+  display: block;
+  font-size: 6em;
+  text-align: center;
+}
+
+@media (max-width:768px) {
+  .slick-jumbotron-panel-exhibit .h1-title {
+    font-size: 4em;
   }
 }
 
-.slick-ghw-nav .slick-slide {
-  padding-left: 15px;
-  padding-right: 15px;
+.slick-jumbotron-panel-exhibit .h1-title small {
+
+}
+
+.slick-jumbotron-panel-exhibit .span-details {
+  display: block;
+  text-align: center;
+}
+
+.slick-jumbotron-panel-exhibit .a-sched {
+  display: inline;
+}
+
+.slick-dots {
+  bottom: 0;
 }

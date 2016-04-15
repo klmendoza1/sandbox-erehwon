@@ -7,52 +7,17 @@
   {% if page.home %}
     <script>
       $(document).ready(function(){
-        $('.slick-ghw-for').slick({
+        $('.slick-jumbotron').slick({
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: false,
-          arrows: false,
+          dots: true,
+          arrows: true,
           autoplay: true,
-          autoplaySpeed: 2000,
+          autoplaySpeed: 5000,
           infinite: true,
           speed: 500,
           fade: true,
           cssEase: 'linear',
-          asNavFor: '.slick-ghw-nav'
-        });
-        $('.slick-ghw-nav').slick({
-          slidesToShow: 6,
-          slidesToScroll: 1,
-          asNavFor: '.slick-ghw-for',
-          dots: false,
-          centerMode: false,
-          focusOnSelect: true,
-          responsive: [
-            {
-              breakpoint: 1200,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 992,
-              settings: {
-                slidesToShow: 4,
-                slidesToScroll: 1
-              }
-            },
-            {
-              breakpoint: 768,
-              settings: {
-                slidesToShow: 3,
-                slidesToScroll: 1
-              }
-            }
-            // You can unslick at a given breakpoint now by adding:
-            // settings: "unslick"
-            // instead of a settings object
-          ]
         });
       });
     </script>
