@@ -19,6 +19,34 @@
           fade: true,
           cssEase: 'linear',
         });
+
+        $('.slick-workshop').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear',
+        });
+
+        $('.slick-artist').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: false,
+          arrows: false,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          infinite: true,
+          speed: 500,
+          fade: true,
+          cssEase: 'linear',
+        });
+
+
       });
     </script>
   {% endif %}
@@ -39,21 +67,26 @@
   var basis_bcr = basis.getBoundingClientRect();
   var navbar = document.getElementById('km-navbar');
   var navbar_bcr = navbar.getBoundingClientRect();
+  var navbar_height = $(navbar).height();
+  //alert(navbar_height);
   window.onscroll = doOnScroll;
 
   function doOnScroll() {
       didScroll = true;
       basis_bcr = basis.getBoundingClientRect();
       navbar_bcr = navbar.getBoundingClientRect();
-      //if ((basis_bcr.bottom-(navbar_bcr.bottom-navbar_bcr.top)) <= 0) {
-      if (basis_bcr.bottom <= 97) {
+      navbar_height = $(navbar).height();
+      //if scrolled down to exit basis
+      if (basis_bcr.bottom <= navbar_height) {
         if (!(hasClass(navbar,'navbar-normalize'))) {
         //if (hasClass(navbar,'navbar-hide')) {
           navbar.classList.add('navbar-normalize');
           //navbar.classList.remove('navbar-hide');
         }
       }
+      // else scrolled up
       else {
+        // if scrolled to top
         if ((hasClass(navbar,'navbar-normalize')) && (basis.getBoundingClientRect().top == 0)) {
         // if ((!(hasClass(navbar,'navbar-hide'))) && (basis.getBoundingClientRect().top == 0)) {
           navbar.classList.remove('navbar-normalize');
@@ -67,27 +100,12 @@
           didScroll = false;
       }
   }, 100);
+
+  $( window ).resize(function() {
+    doOnScroll();
+  });
 </script>
 
-{% endif %}
-
-{% if page.parallax == true %}
-  <script type="text/javascript" src="{{ site.baseurl }}/js/parallax.min.js"></script>
-  <script>$('.parallax-window').parallax({imageSrc: '{{ site.baseurl }}{{ page.parallaxLarge }}',iosFix: false});</script>
-  {% if page.parallaxSmall %}
-    <style>
-      @media (max-width: 768px) {
-        .parallax-window {
-          background-image: url('{{ site.baseurl }}{{ page.parallaxSmall }}');
-          background-size: cover;
-          background-position: center top;
-        }
-        .parallax-mirror {
-          display: none;
-        }
-      }
-    </style>
-  {% endif %}
 {% endif %}
 
 {% if page.animate == true %}

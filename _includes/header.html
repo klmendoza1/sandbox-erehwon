@@ -9,7 +9,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="{{ site.baseurl }}#top">
+        <a class="navbar-brand" href="{% if page.home != true %}{{ site.baseurl }}{{ '/' }}{% else %}{{ '#top' }}{% endif %}">
           <!--img class="visible-xs img-brand" src="{{ site.baseurl }}/images/lungs-monoline.png"-->
           <span>Erehwon<span class="hidden-xs"> Art Foundation<span class="hidden-sm">, Inc.</span></span></span>
         </a>
@@ -17,10 +17,10 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{ site.baseurl }}#activities">Activities</a></li>
-          <li><a href="{{ site.baseurl }}#artists">Artists</a></li>
-          <li><a href="{{ site.baseurl }}#shop">Shop</a></li>
-          <li><a href="{{ site.baseurl }}#about">About</a></li>
+          <li><a href="{% if page.home != true %}{{ site.baseurl }}{{ '/' }}{% else %}{{ '#' }}{% endif %}activities">Activities</a></li>
+          <li><a href="{% if page.home != true %}{{ site.baseurl }}{{ '/' }}{% else %}{{ '#' }}{% endif %}artists">Artists</a></li>
+          <li><a href="{% if page.home != true %}{{ site.baseurl }}{{ '/' }}{% else %}{{ '#' }}{% endif %}about">About</a></li>
+          <li><a href="{{ site.baseurl }}/shop">Shop</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

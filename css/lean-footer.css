@@ -1,0 +1,36 @@
+.section-footer-main,
+.section-footer-copyright {
+  background-color: #F5F5F5;
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  border-color: #ddd;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.section-footer-main {
+
+}
+
+.section-footer-copyright {
+
+}
+
+.col-left>ul {
+
+}
+
+.col-left>ul>li>ul {
+  padding-left: 15px;
+}
+
+.col-right {
+  text-align: right;
+}
+
+.col-right img {
+  display: block;
+  margin-left: auto;
+  max-width: 200px;
+  margin-bottom: 15px;
+}
