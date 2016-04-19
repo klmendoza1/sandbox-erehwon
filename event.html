@@ -1,44 +1,23 @@
 ---
-title: Activities
+title: Event
 layout: main
-navHide: title
 ---
 
-{% include section-title.html %}
-
-<section class="section-content">
+<section class="section-content section-allocate-top">
   <a class="anchor" id="content"></a>
 
   <section>
-    <a class="anchor" id="gallery"></a>
     <div class="container-fluid">
       <div class="row row-limit">
-        <div class="col-lg-12 text-center">
-          <h1 class="h1-title h1-title-reduce-bottom">Gallery Schedules</h1>
-          <p>The Erehwon Art Center is open to visitors from 9:00 AM to 5:00 PM</p>
-        </div>
-      </div>
-
-      <div class="row row-limit">
-        <div class="col-lg-3">
-          <h2>G/F</h2>
-          {% include item-exhibit.html %}
-          {% include item-exhibit.html %}
-        </div>
-        <div class="col-lg-3">
-          <h2>2/F</h2>
-          {% include item-exhibit.html %}
-          {% include item-exhibit.html %}
-        </div>
-        <div class="col-lg-3">
-          <h2>3/F</h2>
-          {% include item-exhibit.html %}
-          {% include item-exhibit.html %}
-        </div>
-        <div class="col-lg-3">
-          <h2>4/F</h2>
-          {% include item-exhibit.html %}
-          {% include item-exhibit.html %}
+        <div class="col-lg-12">
+          <span class="span-artist">Exhibitor Name</span>
+          <h1 class="h1-title">Exhibit {{ i }} Title<br/>
+            <small>Exhibit Subtitle</small>
+          </h1>
+          <div class="span-details">
+            <span>Exhibit Room</span><br/>
+            <span>Exhibit Dates</span>
+          </div>
         </div>
       </div>
     </div>

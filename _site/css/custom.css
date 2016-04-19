@@ -1,16 +1,110 @@
-/*
-.body-allocate-bottom {
-  margin-bottom: 70px;
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,400italic,700,700italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300);
+
+h1, h2, h3, h4, h5, h6,
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
+.navbar-brand span,
+.panel-event .panel-heading .panel-event-date span {
+  font-family: 'Playfair Display', 'Georgia', 'Times New Roman', serif;
 }
-*/
 
-.body-allocate-top {
-  margin-top: 97px;
+* {
+  font-family: 'Open Sans', 'Avenir Next', 'Avenir', 'Arial', sans-serif;
 }
 
-/* MOST SECTIONS */
 
-.row-limit {
-  max-width: 960px;
-  margin: auto;
+a.anchor {
+  display: block;
+  position: relative;
+  top: calc(-100px - 60px);
+  visibility: hidden;
+}
+
+@media (max-width: 992px) {
+  a.anchor {
+    top: calc(-76px - 60px);
+  }
+}
+
+/* HOME - ACTIVITIES */
+
+.slick-jumbotron-panel-exhibit .span-artist,
+.slick-jumbotron-panel-exhibit .h1-title,
+.slick-jumbotron-panel-exhibit .h1-title small,
+.slick-jumbotron-panel-exhibit .span-details span,
+.div-sched .btn.btn-default,
+.section-title h1,
+.section-title p {
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.22);
+}
+
+.slick-jumbotron-panel-exhibit .span-artist,
+.slick-jumbotron-panel-exhibit .h1-title,
+.slick-jumbotron-panel-exhibit .span-details span {
+  color: white;
+}
+
+.slick-jumbotron-panel-exhibit .h1-title small {
+  color: #fbfbfb;
+}
+
+.div-sched .btn.btn-default {
+  border-radius: 0;
+  border-width: 3px;
+  border-color: white;
+  color: white;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 5px;
+  font-size: 1.25em;
+  padding: 10px 10px 10px 16px;
+  box-shadow: inset 1px 1px 5px rgba(0,0,0,0.22), 1px 1px 5px rgba(0,0,0,0.22);
+}
+
+.div-sched .btn.btn-default:hover,
+.div-sched .btn.btn-default:active {
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.22);
+  text-shadow: 1px 1px 5px rgba(0,0,0,0);
+  color: #7d7d7d;
+  background-color: white;
+}
+
+.a-event:hover,
+.a-event:hover *,
+.a-event *:hover,
+.a-event:hover *:hover {
+  text-decoration: none;
+}
+
+.panel.panel-default.panel-event {
+  border-radius: 0;
+}
+
+.panel-event .panel-heading .panel-event-date {
+  border-radius: 0;
+  border-width: 0;
+  border-style: none;
+  background-color: black;
+}
+
+.panel-event .panel-heading .panel-event-date span {
+  color: white;
+}
+
+.panel-event .panel-heading .panel-event-date span:first-of-type {
+  margin-right: -6px;
+}
+
+.panel-event .panel-heading .panel-event-date span:nth-of-type(2) {
+  margin-right: 0px;
+}
+
+.section-title h1 {
+  color: white;
+}
+
+.section-title p {
+  color: #fbfbfb;
 }

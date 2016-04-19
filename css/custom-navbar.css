@@ -1,3 +1,88 @@
+.navbar.navbar-default:not(.navbar-normalize) .navbar-brand,
+.navbar.navbar-default:not(.navbar-normalize) .navbar-nav>li>a {
+  text-shadow: 1px 1px 5px rgba(0,0,0,0.22);
+}
+
+.navbar.navbar-default .navbar-toggle .icon-bar {
+  background-color: #fbfbfb;
+}
+
+.navbar.navbar-default .navbar-brand,
+.navbar.navbar-default .navbar-nav>li>a {
+  padding-top: 39px;
+  padding-bottom: 38px;
+  color: #fbfbfb;
+}
+
+@media (max-width: 992px) {
+  .navbar.navbar-default .navbar-nav>li>a {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+}
+
+.navbar.navbar-default .navbar-brand:hover,
+.navbar.navbar-default .navbar-brand:active,
+.navbar.navbar-default .navbar-nav>li>a:hover,
+.navbar.navbar-default .navbar-nav>li>a:active {
+  color: white;
+}
+
+.navbar.navbar-default .navbar-nav>li.active>a,
+.navbar.navbar-default .navbar-nav>li.active>a:hover,
+.navbar.navbar-default .navbar-nav>li.active>a:active {
+  color: white;
+}
+
+.navbar.navbar-default.navbar-normalize {
+  background-color: white;
+}
+
+.navbar.navbar-default.navbar-normalize .navbar-toggle .icon-bar {
+  background-color: #7d7d7d;
+}
+
+.navbar.navbar-default.navbar-normalize .navbar-brand,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li>a {
+  color: #7d7d7d;
+}
+
+.navbar.navbar-default.navbar-normalize .navbar-brand:hover,
+.navbar.navbar-default.navbar-normalize .navbar-brand:active,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li>a:hover,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li>a:active {
+  color: black;
+}
+
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:hover,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:active {
+  color: black;
+}
+
+@media (max-width: 992px) {
+  .navbar.navbar-default .navbar-brand {
+    padding-top: 23px;
+    padding-bottom: 25px;
+  }
+
+}
+
+@media (max-width: 992px) {
+  .navbar.navbar-default .navbar-brand>span {
+      margin-left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar.navbar-default .navbar-brand>span {
+      margin-left: 10px;
+  }
+}
+
+/* OLD CODE BEYOND */
+
+/*
 .navbar.navbar-default {
   position: absolute;
   background-color: rgba(0,0,0,0.5);
@@ -40,7 +125,6 @@
 }
 
 .navbar.navbar-default .navbar-brand {
-  /*text-transform: uppercase;*/
   font-size: 2em;
   font-weight: 500;
   padding-top: 42px;
@@ -182,3 +266,4 @@
 .navbar-toggle .icon-bar+.icon-bar {
   margin-top: 6px;
 }
+*/

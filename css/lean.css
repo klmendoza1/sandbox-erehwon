@@ -4,20 +4,82 @@
 }
 */
 
+/* GENERAL RULES */
+
+
+
 .body-allocate-top {
   margin-top: 97px;
 }
-
-/* MOST SECTIONS */
 
 .row-limit {
   max-width: 960px;
   margin: auto;
 }
 
+a.anchor {
+  display: block;
+  position: relative;
+  top: calc(-97px - 60px);
+  visibility: hidden;
+}
+
+@media(max-width: 768px) {
+  a.anchor {
+    top: -76px;
+  }
+}
+
+.section-allocate-top {
+  margin-top: 97px;
+}
+
+@media(max-width: 768px) {
+  .section-allocate-top {
+    margin-top: 76px;
+  }
+}
+
+.section-content {
+
+}
+
+.section-content>section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.section-content>.section-link-prev {
+  padding-top: 0;
+}
+
+.section-content>.section-link-prev h1.h1-title:first-of-type {
+  margin-top: 0;
+}
+
+.section-content>section,
+.section-content>.section-white {
+  background-color: white;
+}
+
+.section-content>.section-gray {
+  background-color: #f8f8f8;
+}
+
+.section-content>section>.container-fluid>.row>.col-lg-12:first-of-type>h1 {
+  /*margin-bottom: 25px;*/
+  margin-bottom: 55px;
+}
+
 .h1-title {
 
 }
+
+.h1-title-reduce-bottom {
+  margin-bottom: 20px !important;
+}
+
+/* HOME - ACTIVITIES */
 
 .panel-event .panel-heading {
   background-size: cover;
@@ -74,49 +136,7 @@
   margin-bottom: 3px;
 }
 
-a.anchor {
-  display: block;
-  position: relative;
-  top: calc(-97px - 60px);
-  visibility: hidden;
-}
-
-@media(max-width: 768px) {
-  a.anchor {
-    top: -76px;
-  }
-}
-
-.section-content {
-
-}
-
-.section-content>section {
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-.section-content>.section-link-prev {
-  padding-top: 0;
-}
-
-.section-content>.section-link-prev h1.h1-title:first-of-type {
-  margin-top: 0;
-}
-
-.section-content>section,
-.section-content>.section-white {
-  background-color: white;
-}
-
-.section-content>.section-gray {
-  background-color: #f8f8f8;
-}
-
-.section-content>section>.container-fluid>.row>.col-lg-12:first-of-type>h1 {
-  /*margin-bottom: 25px;*/
-  margin-bottom: 55px;
-}
+/* HOME - ARTIST */
 
 .img-artist-featured {
   border-radius: 100%;
@@ -139,10 +159,31 @@ a.anchor {
   }
 }
 
+/* SUBPAGES */
+
 .section-title {
+
+  background-size: cover;
+  background-position: center center;
+}
+
+.div-overlay-black {
+  background-color: rgba(0,0,0,.5);
   padding-top: 126px;
   padding-bottom: 76px;
 }
+
+.section-title h1 {
+
+}
+
+.section-title p {
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ACTIVITIES */
 
 .div-activity {
   margin-bottom: 30px;
@@ -154,14 +195,23 @@ a.anchor {
   margin-bottom: 0;
 }
 
+.div-activity img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ARTISTS */
+
 .div-artist {
   margin-bottom: 30px;
 }
 
 .div-artist img {
   border-radius: 100%;
-  width: 100%
+  width: 100%;
   max-width: 240px;
+  margin-left: auto;
+  margin-right:auto;
 }
 
 .div-artist h2 {
