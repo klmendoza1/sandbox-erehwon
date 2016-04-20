@@ -1,23 +1,15 @@
 ---
-title: Event/Exhibit Title
-eventDrilldown: true
+title: Artist Name
+artistDrilldown: true
 layout: main
 ---
 
-<section class="section-gray section-allocate-top section-event-header" style="background-image:url('{{ site.baseurl }}/images/filler-1600x1200-1.jpg');">
+<section class="section-gray section-allocate-top section-artist-header" style="background-image:url('{{ site.baseurl }}/images/filler-1600x1200-1.jpg');">
   <div class="div-overlay-black">
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
-          <span class="span-artist">Event Organizer/Exhibitor</span>
-          <h1 class="h1-title">Event/Exhibit Title<br/>
-            <small>Event/Exhibit Subtitle (if applicable)</small>
-          </h1>
-          <div class="span-details">
-            <span>Event Venue</span><br/>
-            <span>Event Date/s</span>
-            <span>Event Time</span>
-          </div>
+
         </div>
       </div>
     </div>
@@ -27,7 +19,19 @@ layout: main
 <section class="section-content">
   <a class="anchor" id="content"></a>
 
-  <section class="section-gray section-article">
+  <section class="section-gray section-artist-info">
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12 text-center">
+          <img class="img-responsive center-block" src="{{ site.baseurl }}/images/filler-300x300.jpg">
+          <h1>Artist Name</h1>
+          <span>Painting, Sculpture</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gray section-article section-link-prev">
     <div class="container-fluid">
       <div class="row row-limit row-limit-article">
         <div class="col-lg-12">
@@ -56,4 +60,31 @@ layout: main
     </div>
   </section>
 
+  <section class="">
+    <a class="anchor" id="works"></a>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h1 class="h1-title text-center">Sample Works</h1>
+        </div>
+      </div>
+
+      {% assign units = 6 %}
+      {% for i in (1..units) %}
+      {% assign mod = i | modulo:3 %}
+      {% if mod == 1 %}
+      <div class="row row-limit">
+      {% endif %}
+        <div class="col-lg-4">
+          {% include item-work.html %}
+        </div>
+      {% if mod == 0 %}
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% if mod != 0 %}
+      </div>
+      {% endif %}
+    </div>
+  </section>
 </section>

@@ -4,7 +4,7 @@
 
 	<link rel="shortcut icon" type="image/x-icon" href="{{ site.baseurl }}/images/favicon.ico">
 
-	<title>{% if page.title %}{{ page.title}}{{' | '}}{{site.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<title>{% if page.eventDrilldown %}{{ page.title }}{{ ' - Events | ' }}{% elsif page.artistDrilldown %}{{ page.title }}{{ ' - Artists | ' }}{% elsif page.title %}{{ page.title }}{{' | '}}{% endif %}{{ site.title }}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!--

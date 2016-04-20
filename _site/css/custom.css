@@ -13,6 +13,15 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   font-family: 'Open Sans', 'Avenir Next', 'Avenir', 'Arial', sans-serif;
 }
 
+.section-allocate-top {
+  margin-top: 100px;
+}
+
+@media(max-width: 992px) {
+  .section-allocate-top {
+    margin-top: 76px;
+  }
+}
 
 a.anchor {
   display: block;
@@ -35,17 +44,25 @@ a.anchor {
 .slick-jumbotron-panel-exhibit .span-details span,
 .div-sched .btn.btn-default,
 .section-title h1,
-.section-title p {
+.section-title p,
+.section-event-header .span-artist,
+.section-event-header .h1-title,
+.section-event-header .h1-title small,
+.section-event-header .span-details span, {
   text-shadow: 1px 1px 5px rgba(0,0,0,0.22);
 }
 
 .slick-jumbotron-panel-exhibit .span-artist,
 .slick-jumbotron-panel-exhibit .h1-title,
-.slick-jumbotron-panel-exhibit .span-details span {
+.slick-jumbotron-panel-exhibit .span-details span,
+.section-event-header .span-artist,
+.section-event-header .h1-title,
+.section-event-header .span-details span {
   color: white;
 }
 
-.slick-jumbotron-panel-exhibit .h1-title small {
+.slick-jumbotron-panel-exhibit .h1-title small,
+.section-event-header .h1-title small {
   color: #fbfbfb;
 }
 
@@ -107,4 +124,12 @@ a.anchor {
 
 .section-title p {
   color: #fbfbfb;
+}
+
+.section-event-header {
+
+}
+
+.section-artist-header {
+
 }

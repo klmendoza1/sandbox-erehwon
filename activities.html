@@ -61,26 +61,7 @@ navHide: title
       </div>
     </div>
   </section>
-  <!--section class="section-gray section-link-prev">
-    <div class="container-fluid">
-      <div class="row row-limit">
-        <div class="col-lg-12">
-          <h1 class="h1-title text-center">Other Art Events</h1>
-        </div>
-      </div>
-      <div class="row row-limit">
-        <div class="col-lg-4">
-          {% include item-event.html %}
-        </div>
-        <div class="col-lg-4">
-          {% include item-event.html %}
-        </div>
-        <div class="col-lg-4">
-          {% include item-event.html %}
-        </div>
-      </div>
-    </div>
-  </section-->
+
 
   <section class="section-gray section-link-prev">
     <a class="anchor" id="events-erehwon"></a>
@@ -136,7 +117,7 @@ navHide: title
       </div>
       {% endif %}
       {% endfor %}
-      {% if mod == 1 %}
+      {% if mod != 0 %}
       </div>
       {% endif %}
     </div>
