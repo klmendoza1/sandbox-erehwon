@@ -1,0 +1,242 @@
+---
+title: Shop
+layout: section-titled
+navHide: title
+artCategories:
+ - name: Collage
+   value: collage
+ - name: Drawing
+   value: drawing
+ - name: Installation
+   value: installation
+ - name: New Media
+   value: newmedia
+ - name: Painting
+   value: painting
+ - name: Photography
+   value: photography
+ - name: Printmaking
+   value: printmaking
+ - name: Sculpture
+   value: sculpture
+ - name: Video
+   value: video
+artStyles:
+ - name: Abstract
+   value: abstract
+ - name: Abstract Expressionism
+   value: abstractexpressionism
+ - name: Art Deco
+   value: artdeco
+ - name: Conceptual
+   value: conceptual
+ - name: Cubism
+   value: cubism
+ - name: Dada
+   value: dada
+ - name: Documentary
+   value: documentary
+ - name: Expressionism
+   value: expressionism
+ - name: Figurative
+   value: figurative
+ - name: Fine Art
+   value: fineart
+ - name: Folk
+   value: folk
+ - name: Illustration
+   value: illustration
+ - name: Impressionism
+   value: impressionism
+ - name: Minimalism
+   value: minimalism
+ - name: Modern
+   value: modern
+ - name: Photorealism
+   value: photorealism
+ - name: Pop Art
+   value: popart
+ - name: Portraiture
+   value: portraiture
+ - name: Realism
+   value: realism
+ - name: Street Art
+   value: streetart
+ - name: Surrealism
+   value: surrealism
+artMediums:
+ - name: 3D Sculpting
+ - name: Acrylic
+ - name: Airbrush
+ - name: Algorithmic Art
+ - name: Aquatint
+ - name: Ballpoint Pen
+ - name: Bronze
+ - name: C-type
+ - name: Ceramic
+ - name: Chalk
+ - name: Charcoal
+ - name: Clay
+ - name: Color
+ - name: Conte
+ - name: Crayon
+ - name: Decoupage
+ - name: Digital
+ - name: Dyepoint
+ - name: Dry Transfer
+ - name: Enamel
+ - name: Encaustic
+ - name: Engraving
+ - name: Environmental
+ - name: Etching
+ - name: Fabric
+ - name: Fiber
+ - name: Fiberglass
+ - name: Found Objects
+ - name: Fractal
+ - name: Full Spectrum
+ - name: Gelatin
+ - name: Gesso
+ - name: Giclee
+ - name: Glass
+ - name: Gouache
+ - name: Granite
+ - name: Graphite
+ - name: Household
+ - name: Ink
+ - name: Interactive
+ - name: Kinetic
+ - name: LED
+ - name: Latex
+ - name: Leather
+ - name: Lenticular
+ - name: Lights
+ - name: Linocuts
+ - name: Lithograph
+ - name: Manipulated
+ - name: Marble
+ - name: Marker
+ - name: Metal
+ - name: Mezzotint
+ - name: Monotype
+ - name: Mosaic
+ - name: Neon
+ - name: New Media
+ - name: Oil
+ - name: Paint
+ - name: Paper
+ - name: Papier Mache
+ - name: Pastel
+ - name: Pen and Ink
+ - name: Pencil
+ - name: Photo
+ - name: Photogram
+ - name: Photography
+ - name: Pinhole
+ - name: Plaster
+ - name: Plastic
+ - name: Platinum
+ - name: Polaroid
+ - name: Pottery
+ - name: Precious Materials
+ - name: Resin
+ - name: Robotics
+ - name: Rubber
+ - name: Screenprinting
+ - name: Silverpoint
+ - name: Sound
+ - name: Spraypaint
+ - name: Steel
+ - name: Stencil
+ - name: Stone
+ - name: Taxidermy
+ - name: Tempera
+ - name: Textile
+ - name: Timber
+ - name: Vector
+ - name: Video
+ - name: Watercolor
+ - name: Wax
+ - name: Wood
+ - name: Woodcut
+---
+
+<section class="section-content">
+  <a class="anchor" id="content"></a>
+
+  <section>
+    <div class="container-fluid">
+
+      <div class="row row-limit row-limit-shop">
+        <div class="col-lg-3 col-md-3 col-sm-4">
+          <div class="div-filters">
+
+            <label class="control-label label-shop-filter">Artist</label>
+            <select class="form-control select-shop-filter">
+              {% for i in (1..14) %}
+              <option>Artist Name {{ i }}</option>
+              {% endfor %}
+            </select>
+
+            <label class="control-label label-shop-filter">Category</label>
+            <select class="form-control select-shop-filter">
+              <option>All Categories</option>
+              {% for category in page.artCategories %}
+              <option value="{{ category.value }}">{{ category.name }}</option>
+              {% endfor %}
+            </select>
+
+            <label class="control-label label-shop-filter">Style</label>
+            <select class="form-control select-shop-filter">
+              <option>All Styles</option>
+              {% for style in page.artStyles %}
+              <option value="{{ style.value }}">{{ style.name }}</option>
+              {% endfor %}
+            </select>
+
+            <label class="control-label label-shop-filter">Subject</label>
+            <input type="text" class="form-control input-shop-filter" placeholder="All Subjects">
+
+            <label class="control-label label-shop-filter">Medium</label>
+            <select class="form-control select-shop-filter">
+              <option>All Mediums</option>
+              {% for medium in page.artMediums %}
+              <optio value="{{ medium.value }}">{{ medium.name }}</option>
+              {% endfor %}
+            </select>
+
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-9 col-md-9 col-sm-8">
+
+          <div class="row">
+            <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4  col-sm-6 col-sm-offset-0  col-xs-12 col-xs-offset-0">
+              <label class="control-label label-shop-order" for="form-order">Order</label>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+              <select class="form-control select-shop-order" id="form-order">
+                <option>Date: Most to Least Recent</option>
+                <option>Date: Least to Most Recent</option>
+                <option>Price: Lowest to Highest</option>
+                <option>Price: Highest to Lowest</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            {% for i in (1..12) %}
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              {% include panel-product.html %}
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+</section>

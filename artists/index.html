@@ -1,0 +1,35 @@
+---
+title: Artists
+layout: section-titled
+navHide: title
+---
+
+<section class="section-content">
+  <a class="anchor" id="content"></a>
+
+  <section>
+    <div class="container-fluid">
+
+      {% assign units = 14 %}
+      {% for i in (1..units) %}
+      {% assign mod = i | modulo:4 %}
+      {% assign cond = units | plus:1 %}
+      {% assign cond = cond | minus:i %}
+      {% if mod == 1 %}
+      <div class="row row-limit">
+      {% endif %}
+        <div class="col-lg-3{% if cond == 2 and mod == 1 %} col-lg-offset-3 col-md-offset-0 col-sm-offset-0 col-xs-offset-0{% elsif cond == 3 and mod == 1 %} col-lg-offset-1pt5 col-md-offset-0 col-sm-offset-0 col-xs-offset-0{% endif %}">
+          {% include item-artist.html %}
+        </div>
+
+      {% if mod == 0 %}
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% if mod != 0 %}
+      </div>
+      {% endif %}
+
+    </div>
+  </section>
+</section>
