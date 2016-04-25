@@ -205,6 +205,9 @@ artMediums:
               {% endfor %}
             </select>
 
+            <label class="control-label label-shop-filter">Price Range</label>
+            <input id="input-slider-price" type="text"/>
+            <span id="span-slider-price"></span>
 
           </div>
 
@@ -232,6 +235,25 @@ artMediums:
               {% include panel-product.html %}
             </div>
             {% endfor %}
+            <div class="col-lg-12">
+              <nav class="nav-pagination">
+                <ul class="pagination">
+                  <li>
+                    <a href="#" aria-label="Previous">
+                      <span aria-hidden="true">&laquo;</span>
+                    </a>
+                  </li>
+                  {% for i in (1..5) %}
+                  <li><a href="{{ site.baseurl }}/shop">{{ i }}</a></li>
+                  {% endfor %}
+                  <li>
+                    <a href="#" aria-label="Next">
+                      <span aria-hidden="true">&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
 
         </div>

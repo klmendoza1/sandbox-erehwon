@@ -1,6 +1,70 @@
 <script type="text/javascript" src="{{ site.baseurl }}/js/jquery.min.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ site.baseurl }}/js/bootstrap-slider.min.js"></script>
 <script type="text/javascript" src="{{ site.baseurl }}/js/smoothscroll.js"></script>
+
+{% if page.title == 'Shop' %}
+  <script>
+    var priceMin = 500;
+    var priceMax = 50000;
+
+    var rangeLower = 500;
+    var rangeHigher = 50000;
+
+    function toStringWithComma(number) {
+      var textOutput = "";
+      var number_copy = number;
+      if (number_copy>=1000) {
+        while (number_copy>=1000) {
+          textOutput = (number_copy%1000).toString() + textOutput;
+          if (number_copy%1000 < 100) textOutput = "0"+textOutput;
+          if (number_copy%1000 < 10) textOutput = "0"+textOutput;
+          number_copy = Math.floor(number_copy/1000);
+          textOutput = ","+textOutput;
+        }
+      }
+      textOutput = number_copy.toString()+textOutput;
+      return textOutput;
+    }
+
+    function spanSliderPrice(lower,higher) {
+      if (lower == higher) {
+        $("#span-slider-price").text("Exactly \u20B1 "+toStringWithComma(lower));
+      }
+      else if (lower == priceMin && higher == priceMax) {
+        $("#span-slider-price").text("Any price (\u20B1 "+toStringWithComma(priceMin)+" to \u20B1 "+toStringWithComma(priceMax)+")");
+      }
+      else {
+        $("#span-slider-price").text("From \u20B1 "+toStringWithComma(lower)+" to \u20B1 "+toStringWithComma(higher));
+      }
+    }
+
+    $("#input-slider-price").slider({
+      id: "input-slider-price",
+      min: priceMin,
+      max: priceMax,
+      range: true,
+      focus: true,
+      tooltip: 'hide',
+      //tooltip_position:'bottom',
+      value: [rangeLower, rangeHigher],
+      step: 500
+    });
+
+    spanSliderPrice(rangeLower,rangeHigher);
+
+    $("#input-slider-price").on("slide", function(slideEvt) {
+      var range = (slideEvt.value);
+      rangeLower = range[0];
+      rangeHigher = range[1];
+      spanSliderPrice(rangeLower,rangeHigher);
+    });
+
+
+
+
+  </script>
+{% endif %}
 
 {% if page.slick %}
   <script type="text/javascript" src="{{ site.baseurl }}/js/slick.min.js"></script>

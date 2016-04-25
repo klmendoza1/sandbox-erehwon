@@ -1,0 +1,99 @@
+---
+layout: main
+allocateTop: true
+title: Product Name
+artist: Artist Name
+productDrilldown: true
+printMaterials:
+ - name: Canvas
+   value: canvas
+---
+
+<section class="section-content">
+  <a class="anchor" id="content"></a>
+
+  <section>
+
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-5 col-md-5 col-sm-5">
+          <img class="">
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7">
+
+          <img>
+
+          <h1>{{ page.title }}</h1>
+          <span>{{ page.artist }}</span><br/>
+
+          <span>Category</span><br/>
+          <span>Size: W x H x T</span><br/>
+          <span>Shipping/packaging/delivery details</span><br/>
+
+          <span>10,000<span>.00</span></span><br/>
+          <a>Make an offer</a><br/>
+          <a>Buy now</a><br/>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section-gray">
+
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12 ">
+          <h2>Art Description</h2>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+            Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
+            molestie consequat, vel illum dolore eu feugiat nulla facilisis at
+            vero eros et accumsan et iusto odio dignissim qui blandit praesent
+            luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section>
+
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h2>More from {{ page.artist }}...</h2>
+        </div>
+        {% for i in (1..4) %}
+        {% assign showArtist = false %}
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          {% include panel-product-small.html %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section-link-prev">
+
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h2>You might like...</h2>
+        </div>
+        {% for i in (1..4) %}
+        {% assign showArtist = true %}
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          {% include panel-product-small.html %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+  </section>
+
+</section>
