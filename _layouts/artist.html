@@ -1,0 +1,72 @@
+---
+artistDrilldown: true
+layout: main
+---
+
+<section class="section-gray section-allocate-top section-artist-header" style="background-image:url('{{ site.baseurl }}/images/filler-1600x1200-1.jpg');">
+  <div class="div-overlay-black">
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-content">
+  <a class="anchor" id="content"></a>
+
+  <section class="section-gray section-artist-info">
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12 text-center">
+          <img class="img-responsive center-block" src="{{ site.baseurl }}/images/artists/{{ page.artist_id }}.jpg">
+          <h1>{{ page.artist_name }}</h1>
+          <span>{{ page.artist_medium }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-gray section-article section-link-prev">
+    <div class="container-fluid">
+      <div class="row row-limit row-limit-article">
+        <div class="col-lg-12">
+          <p>{{ page.artist_description }}
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="">
+    <a class="anchor" id="works"></a>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h1 class="h1-title text-center">Sample Works</h1>
+        </div>
+      </div>
+
+      {% assign units = 6 %}
+      {% for i in (1..units) %}
+      {% assign mod = i | modulo:3 %}
+      {% if mod == 1 %}
+      <div class="row row-limit">
+      {% endif %}
+        <div class="col-lg-4">
+          {% include panel-work.html %}
+        </div>
+      {% if mod == 0 %}
+      </div>
+      {% endif %}
+      {% endfor %}
+      {% if mod != 0 %}
+      </div>
+      {% endif %}
+    </div>
+  </section>
+</section>

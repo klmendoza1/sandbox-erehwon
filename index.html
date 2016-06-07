@@ -6,6 +6,38 @@ navHide: jumbotron
 allocateBottom: true
 slick: true
 animate: true
+
+artist:
+ - name: "Juana dela Cruz"
+   id: "jdelacruz"
+   medium: "Painting"
+   description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
+
+exhibits:
+ - name: "Amazing F"
+   id: "amazingf"
+   sub: "An Art Exhibit to Honor the Filipino Woman"
+   exhibitor: "Various Artists"
+   room: "Room TBA"
+   schedule: "March 24 to April 12, 2014"
+ - name: "Volume III: Pumapapel"
+   id: "pumapapel"
+   sub: "An Exhibition of Artworks on Paper and of Paper by 1000 Artists from the Different Regions of the Philippines"
+   exhibitor: "Various Artists"
+   room: "Room TBA"
+   schedule: "February 25 to March 25, 2015"
+ - name: "Art and Anthropology"
+   id: "artanthro"
+   sub: "Portrait of the Object as Filipino"
+   exhibitor: "Various Artists"
+   room: "Room TBA"
+   schedule: "August 29, 2015 Formal Unveiling"
+ - name: "Tuguegarao Lorem Ipsum"
+   id: "tuguegarao"
+   sub: "Lorem Ipsum Dolor Sit Amet"
+   exhibitor: "Various Artists"
+   room: "Room TBA"
+   schedule: "Dates TBA"
 ---
 
 <section id="jumbotron" class="km-jumbotron" style="">
@@ -13,7 +45,7 @@ animate: true
     <div class="row">
       <div class="col-lg-12">
         <div class="slick-jumbotron">
-          {% for i in (1..4) %}
+          {% for eachexhibit in page.exhibits %}
             {% include slick-slide-jumbotron.html %}
           {% endfor %}
         </div>
@@ -33,7 +65,7 @@ animate: true
           <h1 class="h1-title text-center">Featured Art Events</h1>
         </div>
         {% for i in (1..3) %}
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-4 col-sm-4">
           {% include panel-event.html %}
         </div>
         {% endfor %}
@@ -79,20 +111,18 @@ animate: true
     <a class="anchor" id="artists"></a>
     <div class="container-fluid">
       <div class="row row-limit">
+        {% for onlyartist in page.artist %}
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Featured Artist</h1>
         </div>
         <div class="col-lg-5">
-          <img class="img-responsive img-artist-featured" src="{{ site.baseurl }}/images/filler-300x300.jpg">
-          <h2 class="text-center">Artist Name</h2>
+          <img class="img-responsive img-artist-featured" src="{{ site.baseurl }}/images/artists/{{ onlyartist.id }}.jpg">
+          <h2 class="text-center">{{ onlyartist.name }}</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+            {{ onlyartist.description }}
           </p>
-          <a href="{{ site.baseurl }}/artists">More about Artist</a><br/>
-          <a href="{{ site.baseurl }}/artists/artist">All Artists</a>
+          <a href="{{ site.baseurl }}/artists/artist">More about Artist</a><br/>
+          <a href="{{ site.baseurl }}/artists">All Artists</a>
         </div>
         <div class="col-lg-7">
           <div class="slick-artist">
@@ -104,6 +134,7 @@ animate: true
         <!--div class="col-lg-12">
           <a href="{{ site.baseurl }}/artists">All Artists</a>
         </div-->
+        {% endfor %}
       </div>
     </div>
   </section>

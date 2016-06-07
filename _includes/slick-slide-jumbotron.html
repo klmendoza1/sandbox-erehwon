@@ -1,15 +1,16 @@
-{% assign mod = i | modulo:2 %}
-<div class="slick-jumbotron-panel slick-jumbotron-panel-exhibit" style="background-image:url('{{ site.baseurl }}/images/filler-1600x1200-{% if mod == 1 %}1{% else %}2{% endif %}.jpg')">
+{% assign mod = forloop.index | modulo:2 %}
+<!--div class="slick-jumbotron-panel slick-jumbotron-panel-exhibit" style="background-image:url('{{ site.baseurl }}/images/filler-1600x1200-{% if mod == 1 %}1{% else %}2{% endif %}.jpg')"-->
+<div class="slick-jumbotron-panel slick-jumbotron-panel-exhibit" style="background-image:url('{{ site.baseurl }}/images/exhibits/{{ eachexhibit.id }}/cover.jpg')">
     <div class="slick-jumbotron-panel-content-outer">
       <div class="slick-jumbotron-panel-content-middle">
         <div class="slick-jumbotron-panel-content-inner">
-          <span class="span-artist">Exhibitor Name</span>
-          <h1 class="h1-title">Exhibit {{ i }} Title<br/>
-            <small>Exhibit Subtitle</small>
-          </h1>
+          <span class="span-artist">{{ eachexhibit.exhibitor }}</span>
+          <!--h1 class="h1-title">Exhibit {{ forloop.index }} Title<br/-->
+          <h1 class="h1-title">{{ eachexhibit.name }}</h1><!--br/-->
+          <h1 class="h1-subtitle"><small>{{ eachexhibit.sub }}</small></h1>
           <div class="span-details">
-            <span>Exhibit Room</span><br/>
-            <span>Exhibit Dates</span>
+            <span>{{ eachexhibit.room }}</span><br/>
+            <span>{{ eachexhibit.schedule }}</span>
           </div>
           <div class="div-sched text-center">
             <a href="{{ site.baseurl }}/activities/#gallery" class="btn btn-default"><span class="hidden-xs">See</span> Gallery <br class="visible-xs"/>Schedules</a>
