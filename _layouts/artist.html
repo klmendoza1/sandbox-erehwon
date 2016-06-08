@@ -51,22 +51,15 @@ layout: main
         </div>
       </div>
 
-      {% assign units = 6 %}
-      {% for i in (1..units) %}
-      {% assign mod = i | modulo:3 %}
-      {% if mod == 1 %}
+
       <div class="row row-limit">
-      {% endif %}
-        <div class="col-lg-4">
+      {% for eachart in page.artist_art %}
+        <div class="col-lg-4 col-md-4 col-sm-6">
           {% include panel-work.html %}
         </div>
-      {% if mod == 0 %}
-      </div>
-      {% endif %}
       {% endfor %}
-      {% if mod != 0 %}
       </div>
-      {% endif %}
+
     </div>
   </section>
 </section>

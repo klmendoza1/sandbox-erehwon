@@ -1,7 +1,41 @@
 ---
 title: About
+category: "about"
 layout: main
 navHide: title
+
+missions:
+ - "To develop artistic talent and expertise through the provision of spaces for exhibitions, art residency programs, art seminars and consultations, conferences and fora, and publications;"
+ - "To advocate for the promotion and consciousness raising of art in public spaces through the cooperation and support of government and private sector entities;"
+ - "To be at the forefront of arts policy formulation and implementation."
+
+corevalues:
+ - main: "Freedom"
+   sub: "of thought and expression"
+ - main: "Respect"
+   sub: "for the rights, differences and dignity of others"
+ - main: "Accountability"
+   sub: "and responsibility"
+ - main: "Service"
+   sub: "to the community, country and humanity"
+ - main: "Excellence"
+   sub: "the pursuit of and commitment"
+
+objectives:
+ - "To support the arts through effective management of financial and technical resources;"
+ - "To advocate for effective and truly democratic arts policies that will develop and advance the Philippine artworld;"
+ - "To unite the Filipino artists regardless of origin, affiliation, and ability in order to enhance a forward-thinking and progressive Philippine artworld community;"
+ - "To develop the artistic ability of Filipinos and foreigners via art residency grants, scholarships, and exhibition grants;"
+ - "To stimulate qualitative and relevant artmaking in the Philippines and Southeast Asia through educational programs, database collection, documentation and research, and arts scholarship; and"
+ - "To encourages artists to excel in their respective fields of endeavor through effective arts management, collections, and exchanges."
+
+coreprograms:
+ - title: "Arts Policy Council"
+   description: "This body discusses, formulates, and advocates effective governmental and private sectoral policies."
+ - title: "Artist Residency Program"
+   description: "This program invites selected local and foreign artists to stay and work in designated artist spaces."
+ - title: "Arts Exhibition and Performance Spaces Program"
+   description: "This program designs opportunities for artists and curators to explore and provide creative output through the presentation, review, and publication of exhibits, performances, readings, and other artistic projects."
 ---
 
 {% include section-title.html %}
@@ -30,10 +64,14 @@ navHide: title
         <div class="col-lg-12">
 
           <h1 class="h1-title text-center">Vision</h1>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+          <p>Erehwon Art Foundation, Incorporated seeks to be the hub and nerve
+            center of the arts in the Philippines, as well as in the Southeast
+            Asian region. As a non-stock, non-profit organization devoted to the
+            promotion, conservation, and advocacy of the arts, the institution
+            aims to bring together artists, arts administrators, writers, curators,
+            and patrons to work together for the establishment of a democratic,
+            just, and progressive culture of artmaking, art perception, and
+            ingraining the arts into daily life.
           </p>
 
         </div>
@@ -48,9 +86,9 @@ navHide: title
 
           <h1 class="h1-title text-center">Mission</h1>
           <ol>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</li>
-            <li>Sed diam nonummy nibh euismod tincidunt</li>
-            <li>Laoreet dolore magna aliquam erat volutpat</li>
+            {% for eachmission in page.missions %}
+            <li>{{ eachmission }}</li>
+            {% endfor %}
           </ol>
 
         </div>
@@ -64,21 +102,17 @@ navHide: title
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Core Values</h1>
         </div>
-        <div class="col-lg-2 col-lg-offset-1 col-md-offset-0 col-sm-offset-0 col-xs-0">
-          {% include item-corevalue.html %}
+        {% for eachcorevalue in page.corevalues %}
+        <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 {% if forloop.index == 4 %} col-lg-offset-2 col-md-offset-2 col-xs-offset-0{% endif %}{% if forloop.index == 5 %} col-lg-offset-0 col-md-offset-0 col-sm-offset-3 col-xs-offset-0{% endif %}">
+          <div class="div-coreprogram text-center">
+            <img class="img-responsive" src="{{ site.baseurl }}/images/filler-300x300.jpg">
+            <h2>
+              {{ eachcorevalue.main }}<br/>
+              <small>{{ eachcorevalue.sub }}</small>
+            </h2>
+          </div>
         </div>
-        <div class="col-lg-2">
-          {% include item-corevalue.html %}
-        </div>
-        <div class="col-lg-2">
-          {% include item-corevalue.html %}
-        </div>
-        <div class="col-lg-2">
-          {% include item-corevalue.html %}
-        </div>
-        <div class="col-lg-2">
-          {% include item-corevalue.html %}
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -90,9 +124,9 @@ navHide: title
 
           <h1 class="h1-title text-center">Objectives</h1>
           <ol>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</li>
-            <li>Sed diam nonummy nibh euismod tincidunt</li>
-            <li>Laoreet dolore magna aliquam erat volutpat</li>
+            {% for eachobjective in page.objectives %}
+            <li>{{ eachobjective }}</li>
+            {% endfor %}
           </ol>
 
         </div>
@@ -106,15 +140,15 @@ navHide: title
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Core Programs</h1>
         </div>
+        {% for eachcoreprogram in page.coreprograms %}
         <div class="col-lg-4">
-          {% include item-coreprogram.html %}
+          <div class="div-coreprogram text-center">
+            <img class="img-responsive" src="{{ site.baseurl }}/images/filler-300x300.jpg">
+            <h2>{{ eachcoreprogram.title }}</h2>
+            <p>{{ eachcoreprogram.description }}</p>
+          </div>
         </div>
-        <div class="col-lg-4">
-          {% include item-coreprogram.html %}
-        </div>
-        <div class="col-lg-4">
-          {% include item-coreprogram.html %}
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -156,10 +190,11 @@ navHide: title
           </div>
           <span>
             <strong>Erehwon Art Center</strong><br/>
-            Address Line 1<br/>
-            Address Line 2<br/>
-            123-4567 | 09123456789<br/>
-            example@example.com
+            {% for eachline in site.address %}
+            {{ eachline }}<br/>
+            {% endfor %}
+            {{ site.number }}<br/>
+            {{ site.email }}
           </span>
         </div>
       </div>

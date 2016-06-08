@@ -1,4 +1,4 @@
 <div>
-  {% assign mod = i | modulo:2 %}
+  {% assign mod = forloop.index | modulo:2 %}
   <img class="img-responsive" src="{{ site.baseurl }}/images/filler-640x480-{% if mod == 1 %}1{% else %}2{% endif %}.jpg">
 </div>

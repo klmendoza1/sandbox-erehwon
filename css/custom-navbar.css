@@ -1,3 +1,19 @@
+@media (max-width: 768px) {
+  .navbar.navbar-default {
+      background-color: #1A1A1A;
+      border-style: none;
+      -webkit-transition: 250ms ease-out;
+      -moz-transition: 250ms ease-out;
+      -o-transition: 250ms ease-out;
+      transition: 250ms ease-out;
+  }
+  .navbar.navbar-default .navbar-brand,
+  .navbar.navbar-default.navbar-normalize .navbar-brand,
+  .navbar.navbar-default:not(.navbar-normalize) .navbar-brand {
+    color: white;
+  }
+}
+
 .navbar.navbar-default:not(.navbar-normalize) .navbar-brand,
 .navbar.navbar-default:not(.navbar-normalize) .navbar-nav>li>a {
   text-shadow: 1px 1px 5px rgba(0,0,0,0.22);
@@ -9,15 +25,20 @@
 
 .navbar.navbar-default .navbar-brand,
 .navbar.navbar-default .navbar-nav>li>a {
-  padding-top: 39px;
-  padding-bottom: 38px;
+  padding-top: 24px;
+  padding-bottom: 23px;
   color: #fbfbfb;
+}
+
+.navbar.navbar-default .navbar-nav>li>a {
+  line-height: 3.5em;
 }
 
 @media (max-width: 992px) {
   .navbar.navbar-default .navbar-nav>li>a {
     padding-top: 28px;
     padding-bottom: 28px;
+    line-height: 2.95em;
   }
 }
 
@@ -35,7 +56,9 @@
 }
 
 .navbar.navbar-default.navbar-normalize {
-  background-color: white;
+  /*background-color: #bb3030;*/
+  background-color: #1a1a1a;
+  border-style: none;
 }
 
 .navbar.navbar-default.navbar-normalize .navbar-toggle .icon-bar {
@@ -44,20 +67,27 @@
 
 .navbar.navbar-default.navbar-normalize .navbar-brand,
 .navbar.navbar-default.navbar-normalize .navbar-nav>li>a {
-  color: #7d7d7d;
+  color: white;
+}
+
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:hover,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:active,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.current>a,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.current>a:hover,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.current>a:active {
+  color: #fffe66;
 }
 
 .navbar.navbar-default.navbar-normalize .navbar-brand:hover,
 .navbar.navbar-default.navbar-normalize .navbar-brand:active,
 .navbar.navbar-default.navbar-normalize .navbar-nav>li>a:hover,
-.navbar.navbar-default.navbar-normalize .navbar-nav>li>a:active {
-  color: black;
-}
-
-.navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li>a:active,
 .navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:hover,
-.navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:active {
-  color: black;
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:active,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.active.current>a:hover,
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.active.current>a:active {
+  color: #ff5501 !important;
 }
 
 @media (max-width: 992px) {
@@ -65,7 +95,13 @@
     padding-top: 23px;
     padding-bottom: 25px;
   }
+}
 
+@media (max-width: 768px) {
+  .navbar.navbar-default .navbar-brand {
+    padding-top: 13px;
+    padding-bottom: 15px;
+  }
 }
 
 @media (max-width: 992px) {

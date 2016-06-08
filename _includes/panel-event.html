@@ -1,18 +1,44 @@
 <a class="a-event" href="{{ site.baseurl }}/activities/event" target="_blank">
   <div class="panel panel-default panel-event">
-    <div class="panel-heading" style="background-image:url('{{site.baseurl}}/images/filler-320x240.jpg')">
+    <!--div class="panel-heading" style="background-image:url('{{site.baseurl}}/images/filler-320x240.jpg')"-->
+    <div class="panel-heading">
+      <div class="embed-responsive embed-responsive-4by3">
+        <img class="img-responsive" src="{{site.baseurl}}/images/filler-320x240.jpg">
+      </div>
       <div class="panel-event-date">
+        {% if eachevent %}
+
+        {% for eachday in eachevent.day %}
+
+        {% if forloop.length == 4 %}
+        {% if forloop.index == 3 %}
+        <span>to {{ eachday }}
+        {% elsif forloop.index == 4 %}
+          {{ eachday }}</span>
+        {% else %}
+        <span>{{ eachday }}</span>
+        {% endif %}
+        {% else %}
+        <span>{{ eachday }}</span>
+        {% endif %}
+
+        {% endfor %}
+
+        {% else %}
         <span>Jan</span>
         <span>01</span>
         <span>to Jan 03</span>
+
+        {% endif %}
       </div>
+
     </div>
     <div class="panel-body">
-      <h2>Event/Exhibit Title</h2>
+      <h2>{{ eachevent.name }}</h2>
       <span>
-        Event Organizer/Exhibitor<br/>
-        Event Venue</br>
-        1:00 PM - 5:00 PM
+        {{ eachevent.organizer }}<br/>
+        {{ eachevent.venue }}</br>
+        {{ eachevent.time }}
       </span>
     </div>
     <div class="panel-footer">

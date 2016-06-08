@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html id="top">
+
+  {% include head.html %}
+
+    <body class="{% if page.allocateTop %}{{ ' body-allocate-top ' }}{% endif %}{% if page.allocateBottom %}{{ 'body-allocate-bottom ' }}{% endif %}" {% if page.home %} data-spy="scroll" data-target="#km-navbar" {% endif %}>
+
+		{% include header.html %}
+
+		<section class="page-content">
+
+		{{content}}
+
+		</section>
+
+		{% include footer.html %}
+
+		{% include foot.html %}
+
+	</body>
+</html>

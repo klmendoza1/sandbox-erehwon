@@ -6,3 +6,9 @@ baseurl: http://toffmendoza.me/sandbox-erehwon
 markdown: kramdown
 permalink: pretty
 # baseurl:
+
+address:
+ - 1 Don Francisco, Villa Beatriz
+ - Old Balara, Quezon City
+number: +632 384 3507
+email: info@erehwonartworld.com

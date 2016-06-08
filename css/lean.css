@@ -115,8 +115,15 @@ a.anchor {
 .panel-event .panel-heading {
   background-size: cover;
   background-position: center center;
-  height: 180px;
+  /*height: 180px;*/
   position: relative;
+}
+
+.panel-event .panel-heading .embed-responsive {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-top: -10px;
+  margin-bottom: -10px;
 }
 
 .panel-event .panel-heading .panel-event-date {

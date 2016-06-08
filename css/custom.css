@@ -13,26 +13,51 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
   font-family: 'Open Sans', 'Avenir Next', 'Avenir', 'Arial', sans-serif;
 }
 
+
+.section-content>.section-red {
+  background-color: #bb3030;
+}
+
+.section-content>.section-red h1,
+.section-content>.section-red h2,
+.section-content>.section-red p {
+  color: white;
+}
+
+
+
 .section-allocate-top {
-  margin-top: 100px;
+  margin-top: 96px;
 }
 
 @media(max-width: 992px) {
   .section-allocate-top {
-    margin-top: 76px;
+    margin-top: 97px;
+  }
+}
+
+@media(max-width: 768px) {
+  .section-allocate-top {
+    margin-top: 77px;
   }
 }
 
 a.anchor {
   display: block;
   position: relative;
-  top: calc(-100px - 60px);
+  top: calc(-100px - 55px);
   visibility: hidden;
 }
 
 @media (max-width: 992px) {
   a.anchor {
-    top: calc(-76px - 60px);
+    top: calc(-76px - 81px);
+  }
+}
+
+@media (max-width: 768px) {
+  a.anchor {
+    top: calc(-76px - 61px);
   }
 }
 
@@ -88,6 +113,10 @@ a.anchor {
   font-size: 1.25em;
   padding: 10px 10px 10px 16px;
   box-shadow: inset 1px 1px 5px rgba(0,0,0,0.22), 1px 1px 5px rgba(0,0,0,0.22);
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
 }
 
 .div-sched .btn.btn-default:hover,
@@ -96,6 +125,10 @@ a.anchor {
   text-shadow: 1px 1px 5px rgba(0,0,0,0);
   color: #7d7d7d;
   background-color: white;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
 }
 
 .a-event:hover,
@@ -142,4 +175,27 @@ a.anchor {
 
 .section-artist-header {
 
+}
+
+.div-artist .div-artist-text {
+
+}
+
+.div-artist .div-artist-text h2 {
+  font-size: 1.5em;
+}
+
+.section-footer-main, .section-footer-copyright {
+  background-color: #1a1a1a;
+  border-style: none;
+}
+
+.section-footer-copyright {
+  border-style: solid;
+  border-width: 1px 0 0 0;
+  border-color: #262626;
+}
+
+.section-footer-main .col-right span {
+  color: white;
 }

@@ -7,12 +7,6 @@ allocateBottom: true
 slick: true
 animate: true
 
-artist:
- - name: "Juana dela Cruz"
-   id: "jdelacruz"
-   medium: "Painting"
-   description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
-
 exhibits:
  - name: "Amazing F"
    id: "amazingf"
@@ -38,6 +32,61 @@ exhibits:
    exhibitor: "Various Artists"
    room: "Room TBA"
    schedule: "Dates TBA"
+
+events:
+ - name: "Pulso"
+   id: "pulso"
+   organizer: "UP College of Fine Arts"
+   venue: "UP College of Fine Arts"
+   day:
+    - "Jan"
+    - "01"
+   time: "9:00 AM to 6:00 PM"
+ - name: "Reverb"
+   id: "reverb"
+   organizer: "Mark Justiniani"
+   venue: "UP Vargas Museum"
+   day:
+    - "Jan"
+    - "01"
+    - "Jan"
+    - "03"
+   time: "8:00 AM to 6:00 PM"
+ - name: "Volume 1"
+   id: "volumeone"
+   organizer: "Erehwon Art Foundation"
+   venue: "Erehwon Art Center"
+   day:
+    - "Jan"
+    - "01"
+   time: "9:00 AM to 5:00 PM"
+
+activity:
+ - name: "Basic Acrylic Painting Workshop"
+   id: "acrylic"
+   description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
+   photos:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+    - "01.jpg"
+
+artist:
+ - name: "Juana dela Cruz"
+   id: "jdelacruz"
+   medium: "Painting"
+   description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+    - "01.jpg"
+
+
 ---
 
 <section id="jumbotron" class="km-jumbotron" style="">
@@ -46,7 +95,27 @@ exhibits:
       <div class="col-lg-12">
         <div class="slick-jumbotron">
           {% for eachexhibit in page.exhibits %}
-            {% include slick-slide-jumbotron.html %}
+          {% assign mod = forloop.index | modulo:2 %}
+          <!--div class="slick-jumbotron-panel slick-jumbotron-panel-exhibit" style="background-image:url('{{ site.baseurl }}/images/filler-1600x1200-{% if mod == 1 %}1{% else %}2{% endif %}.jpg')"-->
+          <div class="slick-jumbotron-panel slick-jumbotron-panel-exhibit" style="background-image:url('{{ site.baseurl }}/images/exhibits/{{ eachexhibit.id }}/cover.jpg')">
+              <div class="slick-jumbotron-panel-content-outer">
+                <div class="slick-jumbotron-panel-content-middle">
+                  <div class="slick-jumbotron-panel-content-inner">
+                    <span class="span-artist">{{ eachexhibit.exhibitor }}</span>
+                    <!--h1 class="h1-title">Exhibit {{ forloop.index }} Title<br/-->
+                    <h1 class="h1-title">{{ eachexhibit.name }}</h1><!--br/-->
+                    <h1 class="h1-subtitle"><small>{{ eachexhibit.sub }}</small></h1>
+                    <div class="span-details">
+                      <span>{{ eachexhibit.room }}</span><br/>
+                      <span>{{ eachexhibit.schedule }}</span>
+                    </div>
+                    <div class="div-sched text-center">
+                      <a href="{{ site.baseurl }}/activities/#gallery" class="btn btn-default"><span class="hidden-xs">See</span> Gallery <br class="visible-xs"/>Schedules</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
           {% endfor %}
         </div>
       </div>
@@ -64,15 +133,19 @@ exhibits:
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Featured Art Events</h1>
         </div>
-        {% for i in (1..3) %}
-        <div class="col-lg-4 col-md-4 col-sm-4">
-          {% include panel-event.html %}
-        </div>
-        {% endfor %}
+      </div>
+
+      <div class="row row-limit">
+        {% assign argevents = page.events %}
+        {% include sectioncontent-events.html %}
+      </div>
+
+      <div class="row row-limit">
         <div class="col-lg-12">
           <a href="{{ site.baseurl }}/activities/#events">More Events</a>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -82,24 +155,27 @@ exhibits:
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Featured Activity</h1>
         </div>
+        {% for onlyactivity in page.activity %}
         <div class="col-lg-7">
           <div class="slick-workshop">
-            {% for i in (1..4) %}
-              {% include slick-slide.html %}
+            {% for eachphoto in onlyactivity.photos %}
+            <div>
+              <div class="embed-responsive embed-responsive-4by3">
+                <img class="img-responsive" src="{{ site.baseurl }}/images/workshops/{{ onlyactivity.id }}/{{ eachphoto }}">
+              </div>
+            </div>
             {% endfor %}
           </div>
         </div>
         <div class="col-lg-5">
-          <h2 class="text-center">Activity Title</h2>
+          <h2 class="text-center">{{ onlyactivity.name }}</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+            {{ onlyactivity.description }}
           </p>
-          <a>More about Workshop</a><br/>
+          <a href="{{ site.baseurl }}/activities/event">More about Workshop</a><br/>
           <a href="{{ site.baseurl }}/activities/#workshops">All Workshops</a>
         </div>
+        {% endfor %}
         <!--div class="col-lg-12">
           <a href="{{ site.baseurl }}/activities#workshops">All Workshops</a>
         </div-->
@@ -107,7 +183,7 @@ exhibits:
     </div>
   </section>
 
-  <section class="section-gray">
+  <section class="section-gray section-red">
     <a class="anchor" id="artists"></a>
     <div class="container-fluid">
       <div class="row row-limit">
@@ -126,8 +202,12 @@ exhibits:
         </div>
         <div class="col-lg-7">
           <div class="slick-artist">
-            {% for i in (1..4) %}
-              {% include slick-slide.html %}
+            {% for eachart in onlyartist.art %}
+            <div>
+              <div class="embed-responsive embed-responsive-4by3">
+                <img class="img-responsive" src="{{ site.baseurl }}/images/art/{{ onlyartist.id }}/{{ eachart }}">
+              </div>
+            </div>
             {% endfor %}
           </div>
         </div>
@@ -144,7 +224,7 @@ exhibits:
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
-          <img class="center-block" src="{{ site.baseurl }}/images/filler-300x300.jpg" style="margin-bottom:60px;">
+          <img class="center-block" src="{{ site.baseurl }}/images/logo-glyph-color.png" style="margin-bottom:60px;">
           <h1 class="h1-title text-center">Erehwon<br/>
             <small>Art Foundation, Inc.</small>
           </h1>
