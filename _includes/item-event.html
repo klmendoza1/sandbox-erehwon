@@ -1,8 +1,26 @@
 <div class="div-event">
-  <h2>Event Title</h2>
   <span>
-    Event Exhibitor<br/>
-    Event Venue</br>
-    1:00 PM - 5:00 PM
+    {% for eachday in eachevent.day %}
+
+    {% if forloop.length == 4 %}
+
+    {% if forloop.index == 3 %}
+    to
+    {{ eachday }}
+    {% else %}
+    {{ eachday }}
+    {% endif %}
+
+    {% else %}
+    {{ eachday }}
+    {% endif %}
+
+    {% endfor %}
+  </span>
+  <h2>{{ eachevent.name }}</h2>
+  <span>
+    {{ eachevent.organizer }}<br/>
+    {{ eachevent.venue }}</br>
+    {{ eachevent.time }}
   </span>
 </div>

@@ -4,18 +4,21 @@
       <div class="row">
         <div class="col-lg-6 col-left">
           <ul class="list-unstyled">
-            <li><a>Home</a></li>
+            <li><a href="{{ site.baseurl }}/">Home</a></li>
+            {% if site.switchActivities == true %}
             <li>
               <a>Activities</a>
               <ul class="list-unstyled">
-                <li><a>Gallery Schedules</a></li>
-                <li><a>Erehwon Events</a></li>
-                <li><a>Other Art Events</a></li>
-                <li><a>Workshops | Lectures | Art Classes</a></li>
+                <li><a href="{{ site.baseurl }}/activities/#gallery">Gallery Schedules</a></li>
+                {% if site.switchActivitiesEventsInte == true or site.switchActivitiesEventsExte == true %}<li><a href="{{ site.baseurl }}/activities/#events">Erehwon and Other Art Events</a></li>{% endif %}
+                {% if site.switchActivitiesWorkshops == true %}<li><a href="{{ site.baseurl }}/activities/#gallery">Workshops, Lectures &amp; Art Classes</a></li>{% endif %}
               </ul>
             </li>
+            {% endif %}
+            {% if site.switchArtists == true %}
             <li><a>Artists</a></li>
-            <li><a>Shop</a></li>
+            {% endif %}
+            {% if site.switchAbout == true %}
             <li>
               <a>About</a>
               <ul class="list-unstyled">
@@ -24,6 +27,10 @@
                 <li><a>Contact</a></li>
               </ul>
             </li>
+            {% endif %}
+            {% if site.switchShop == true %}
+            <li><a>Shop</a></li>
+            {% endif %}
           </ul>
         </div>
         <div class="col-lg-6 col-right">

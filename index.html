@@ -14,79 +14,37 @@ exhibits:
    exhibitor: "Various Artists"
    room: "Room TBA"
    schedule: "March 24 to April 12, 2014"
+   photo: ""
  - name: "Volume III: Pumapapel"
    id: "pumapapel"
    sub: "An Exhibition of Artworks on Paper and of Paper by 1000 Artists from the Different Regions of the Philippines"
    exhibitor: "Various Artists"
    room: "Room TBA"
    schedule: "February 25 to March 25, 2015"
+   photo: ""
  - name: "Art and Anthropology"
    id: "artanthro"
    sub: "Portrait of the Object as Filipino"
    exhibitor: "Various Artists"
    room: "Room TBA"
    schedule: "August 29, 2015 Formal Unveiling"
+   photo: ""
  - name: "Tuguegarao Lorem Ipsum"
    id: "tuguegarao"
    sub: "Lorem Ipsum Dolor Sit Amet"
    exhibitor: "Various Artists"
    room: "Room TBA"
    schedule: "Dates TBA"
+   photo: ""
 
-events:
- - name: "Pulso"
-   id: "pulso"
-   organizer: "UP College of Fine Arts"
-   venue: "UP College of Fine Arts"
-   day:
-    - "Jan"
-    - "01"
-   time: "9:00 AM to 6:00 PM"
- - name: "Reverb"
-   id: "reverb"
-   organizer: "Mark Justiniani"
-   venue: "UP Vargas Museum"
-   day:
-    - "Jan"
-    - "01"
-    - "Jan"
-    - "03"
-   time: "8:00 AM to 6:00 PM"
- - name: "Volume 1"
-   id: "volumeone"
-   organizer: "Erehwon Art Foundation"
-   venue: "Erehwon Art Center"
-   day:
-    - "Jan"
-    - "01"
-   time: "9:00 AM to 5:00 PM"
+featureEventsId:
+ - "event1"
+ - "event2"
+ - "event3"
 
-activity:
- - name: "Basic Acrylic Painting Workshop"
-   id: "acrylic"
-   description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
-   photos:
-    - "01.jpg"
-    - "02.jpg"
-    - "03.jpg"
-    - "03.jpg"
-    - "02.jpg"
-    - "01.jpg"
+featureActivityId: "acrylic"
 
-artist:
- - name: "Juana dela Cruz"
-   id: "jdelacruz"
-   medium: "Painting"
-   description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
-   art:
-    - "01.jpg"
-    - "02.jpg"
-    - "03.jpg"
-    - "03.jpg"
-    - "02.jpg"
-    - "01.jpg"
-
-
+featureArtistId: "jdelacruz"
 ---
 
 <section id="jumbotron" class="km-jumbotron" style="">
@@ -126,6 +84,7 @@ artist:
 <section class="section-content">
   <a class="anchor" id="content"></a>
 
+  {% if site.switchActivitiesEventsFeature == true %}
   <section>
     <a class="anchor" id="activities"></a>
     <div class="container-fluid">
@@ -136,8 +95,41 @@ artist:
       </div>
 
       <div class="row row-limit">
-        {% assign argevents = page.events %}
-        {% include sectioncontent-events.html %}
+        {% for eacheventid in page.featureEventsId %}
+
+        {% assign checkmatch = false %}
+
+        {% for onlyevent in site.inteEvents %}
+        {% if onlyevent.id == eacheventid %}
+        {% assign checkmatch = true %}
+        {% break %}
+        {% endif %}
+        {% endfor %}
+
+        {% if checkmatch == true %}
+        {% assign eventscan = site.inteEvents %}
+        {% else %}
+        {% for onlyevent in site.exteEvents %}
+        {% if onlyevent.id == eacheventid %}
+        {% assign checkmatch = true %}
+        {% break %}
+        {% endif %}
+        {% endfor %}
+        {% if checkmatch == true %}
+        {% assign eventscan = site.exteEvents %}
+        {% endif %}
+        {% endif %}
+
+        {% for onlyevent in eventscan %}
+        {% if onlyevent.id == eacheventid %}
+        {% assign eachevent = onlyevent %}
+        <div class="col-lg-4 col-md-4 col-sm-4">
+          {% include panel-event.html %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        {% endfor %}
       </div>
 
       <div class="row row-limit">
@@ -148,14 +140,17 @@ artist:
 
     </div>
   </section>
+  {% endif %}
 
-  <section class="section-link-prev">
+  {% if site.switchActivitiesWorkshopsFeature == true %}
+  {% for onlyactivity in site.workshops %}
+  {% if onlyactivity.id == page.featureActivityId %}
+  <section{% if site.switchActivitiesEventsFeature == true %} class="section-link-prev"{% endif %}>
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Featured Activity</h1>
         </div>
-        {% for onlyactivity in page.activity %}
         <div class="col-lg-7">
           <div class="slick-workshop">
             {% for eachphoto in onlyactivity.photos %}
@@ -169,43 +164,52 @@ artist:
         </div>
         <div class="col-lg-5">
           <h2 class="text-center">{{ onlyactivity.name }}</h2>
+          {% for eachdescription in onlyactivity.description %}
+          {% if forloop.index == 1 %}
           <p>
-            {{ onlyactivity.description }}
+            {{ eachdescription }}
           </p>
-          <a href="{{ site.baseurl }}/activities/event">More about Workshop</a><br/>
+          {% endif %}
+          {% endfor %}
+          <!--a href="{{ site.baseurl }}/activities/event">More about Workshop</a><br/-->
           <a href="{{ site.baseurl }}/activities/#workshops">All Workshops</a>
         </div>
-        {% endfor %}
-        <!--div class="col-lg-12">
-          <a href="{{ site.baseurl }}/activities#workshops">All Workshops</a>
-        </div-->
       </div>
     </div>
   </section>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
 
+  {% if site.switchArtistsFeature == true %}
+  {% for onlyartist in site.artists %}
+  {% if onlyartist.id == page.featureArtistId %}
   <section class="section-gray section-red">
     <a class="anchor" id="artists"></a>
     <div class="container-fluid">
       <div class="row row-limit">
-        {% for onlyartist in page.artist %}
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Featured Artist</h1>
         </div>
         <div class="col-lg-5">
-          <img class="img-responsive img-artist-featured" src="{{ site.baseurl }}/images/artists/{{ onlyartist.id }}.jpg">
+          <img class="img-responsive img-artist-featured" src="{{ site.baseurl }}/images/artists/{{ onlyartist.id }}/{{ onlyartist.photo }}">
           <h2 class="text-center">{{ onlyartist.name }}</h2>
+          {% for eachdescription in onlyartist.description %}
+          {% if forloop.index == 1 %}
           <p>
-            {{ onlyartist.description }}
+            {{ eachdescription }}
           </p>
+          {% endif %}
+          {% endfor %}
           <a href="{{ site.baseurl }}/artists/artist">More about Artist</a><br/>
-          <a href="{{ site.baseurl }}/artists">All Artists</a>
+          {% if site.switchArtists == true %}<a href="{{ site.baseurl }}/artists">All Artists</a>{% endif %}
         </div>
         <div class="col-lg-7">
           <div class="slick-artist">
             {% for eachart in onlyartist.art %}
             <div>
               <div class="embed-responsive embed-responsive-4by3">
-                <img class="img-responsive" src="{{ site.baseurl }}/images/art/{{ onlyartist.id }}/{{ eachart }}">
+                <img class="img-responsive" src="{{ site.baseurl }}/images/artists/{{ onlyartist.id }}/{{ eachart }}">
               </div>
             </div>
             {% endfor %}
@@ -214,10 +218,12 @@ artist:
         <!--div class="col-lg-12">
           <a href="{{ site.baseurl }}/artists">All Artists</a>
         </div-->
-        {% endfor %}
       </div>
     </div>
   </section>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
 
   <section>
     <a class="anchor" id="about"></a>

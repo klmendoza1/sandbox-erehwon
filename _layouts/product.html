@@ -1,0 +1,102 @@
+---
+layout: main
+category: "shop"
+allocateTop: true
+productDrilldown: true
+---
+
+{% for onlyproduct in page.product %}
+
+<section class="section-content">
+  <a class="anchor" id="content"></a>
+
+  <section>
+
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-5 col-md-5 col-sm-5">
+          <img class="">
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7">
+
+          <img>
+
+          <h1>{{ onlyproduct.name }}</h1>
+          <span>{{ onlyproduct.artist }}</span><br/>
+
+          <span>
+            {% for eachcategory in onlyproduct.category %}
+            {{ eachcategory }}{% if forloop.last == false %}, {% endif %}
+            {% endfor %}
+          </span><br/>
+          <span>Size: W x H x T</span><br/>
+          <span>Shipping/packaging/delivery details</span><br/>
+
+          <span>
+            {% for eachprice in onlyproduct.price %}{% if forloop.index == 1 %}{{ eachprice }}.{% elsif forloop.index == 2 %}<span>{{ eachprice }}</span>{% endif %}{% endfor %}
+          </span><br/>
+          <a>Make an offer</a><br/>
+          <a>Buy now</a><br/>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="section-gray">
+
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12 ">
+          <h2>Art Description</h2>
+          <p>{{ onlyproduct.description }}</p>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  {% if site.switchShopRelated == true %}
+
+  {% if site.switchShopRelatedMore == true %}
+  <section>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h2>More from {{ onlyproduct.artist }}...</h2>
+        </div>
+        {% for i in (1..4) %}
+        {% assign showArtist = false %}
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          {% include panel-product-small.html %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if site.switchShopRelatedLike == true %}
+  <section{% if site.switchShopRelatedMore == true %} class="section-link-prev"{% endif %}>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h2>You might like...</h2>
+        </div>
+        {% for i in (1..4) %}
+        {% assign showArtist = true %}
+        <div class="col-lg-3 col-md-3 col-sm-6">
+          {% include panel-product-small.html %}
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% endif %}
+
+</section>
+
+{% endfor %}

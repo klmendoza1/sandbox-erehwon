@@ -1,14 +1,19 @@
 <div class="div-activity">
   <!--img class="img-responsive" src="{{ site.baseurl }}/images/filler-640x360-1.jpg"-->
   <div class="embed-responsive embed-responsive-16by9">
-    <img class="img-responsive" src="{{site.baseurl}}/images/filler-640x360-1.jpg">
+    <img class="img-responsive" src="{{ site.baseurl }}/images/workshops/{{ eachactivity.id }}/cover.jpg">
   </div>
-  <h2>Activity Title</h2>
-  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-  nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-  volutpat.</p>
+  <h2>{{ eachactivity.name }}</h2>
+  {% for eachdescription in eachactivity.description %}
+  {% if forloop.index == 1 %}
+  <p>
+    {{ eachdescription }}
+  </p>
+  {% endif %}
+  {% endfor %}
   <h3>Details</h3>
-  <span><strong>Time:</strong> 9:00 AM - 5:00 PM</span><br/>
+  <span><strong>Date:</strong> January 1 to 3, 2016</span><br/>
+  <span><strong>Time:</strong> 9:00 AM - 12:00 NN</span><br/>
   <span><strong>Venue:</strong> Erehwon Art Center Activity Hall</span><br/>
   <a href="#cta">Register</a>
 </div>

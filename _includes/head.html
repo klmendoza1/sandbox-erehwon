@@ -22,7 +22,55 @@
 	<meta name="msapplication-TileImage" content="{{ site.baseurl }}/images/favicon/mstile-144x144.png">
 	<meta name="theme-color" content="#1a1a1a">
 
-	<title>{% if page.eventDrilldown %}{{ page.title }}{{ ' - Events | ' }}{% elsif page.artistDrilldown %}{{ page.title }}{{ ' - Artists | ' }}{% elsif page.productDrilldown %}{{ page.title }}{{ ' by ' }}{{ page.artist }}{{ ' - Shop | ' }}{% elsif page.title %}{{ page.title }}{{' | '}}{% endif %}{{ site.title }}</title>
+	<title>
+		{% if page.eventDrilldown == true %}
+			{% assign checkmatch = false %}
+			{% for onlyevent in site.inteEvents %}
+				{% if onlyevent.id == page.id %}
+					{% assign checkmatch = true %}
+					{% break %}
+				{% endif %}
+			{% endfor %}
+			{% if checkmatch == true %}
+				{% assign eventscan = site.inteEvents %}
+			{% else %}
+				{% for onlyevent in site.exteEvents %}
+					{% if onlyevent.id == page.id %}
+						{% assign checkmatch = true %}
+						{% break %}
+					{% endif %}
+				{% endfor %}
+				{% if checkmatch == true %}
+					{% assign eventscan = site.exteEvents %}
+				{% endif %}
+			{% endif %}
+			{% for onlyevent in eventscan %}
+				{% if onlyevent.id == page.id %}
+				{{ onlyevent.name }}{{ ' - ' }}
+				{% endif %}
+			{% endfor %}
+			{{ 'Events | ' }}
+		{% elsif page.artistDrilldown == true %}
+			{% for onlyartist in site.artists %}
+				{% if onlyartist.id == page.id %}
+					{{ onlyartist.name }}{{ ' - ' }}
+					{% break %}
+				{% endif %}
+			{% endfor %}
+			{{ 'Artists | ' }}
+		{% elsif page.productDrilldown %}
+			{% for onlyproduct in page.products %}
+				{% if onlyproduct.id == page.id %}
+					{{ onlyproduct.name }}{{ ' by ' }}
+					{{ onlyproduct.artist }}{{ ' - ' }}
+				{% endif %}
+			{% endfor %}
+			{{ 'Shop | ' }}
+		{% elsif page.title %}
+			{{ page.title }}{{' | '}}
+		{% endif %}
+		{{ site.title }}
+	</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!--

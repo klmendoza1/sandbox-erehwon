@@ -15,14 +15,18 @@
         </a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
+
+      {% if site.switchActivities == true or site.switchArtists == true or site.switchAbout == true or site.switchShop == true %}
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
-          <li{% if page.category == "activities" %} class="current"{% endif %}><a href="{% if page.home != true %}{{ site.baseurl }}{{ '/' }}{% else %}{{ '#' }}{% endif %}activities">Activities</a></li>
-          <li{% if page.category == "artists" %} class="current"{% endif %}><a href="{% if page.home != true %}{{ site.baseurl }}{{ '/' }}{% else %}{{ '#' }}{% endif %}artists">Artists</a></li>
-          <li{% if page.category == "about" %} class="current"{% endif %}><a href="{% if page.home != true %}{{ site.baseurl }}{{ '/' }}{% else %}{{ '#' }}{% endif %}about">About</a></li>
-          <li{% if page.category == "shop" %} class="current"{% endif %}><a href="{{ site.baseurl }}/shop">Shop</a></li>
+          {% if site.switchActivities == true %}<li{% if page.category == "activities" %} class="current"{% endif %}><a href="{% if page.home != true or site.switchHeaderAnchoring != true %}{{ site.baseurl }}{{ '/' }}{% else %}{{ '#' }}{% endif %}activities">Activities</a></li>{% endif %}
+          {% if site.switchArtists == true %}<li{% if page.category == "artists" %} class="current"{% endif %}><a href="{% if page.home != true or site.switchHeaderAnchoring != true %}{{ site.baseurl }}{{ '/' }}{% else %}{{ '#' }}{% endif %}artists">Artists</a></li>{% endif %}
+          {% if site.switchAbout == true %}<li{% if page.category == "about" %} class="current"{% endif %}><a href="{% if page.home != true or site.switchHeaderAnchoring != true %}{{ site.baseurl }}{{ '/' }}{% else %}{{ '#' }}{% endif %}about">About</a></li>{% endif %}
+          {% if site.switchShop == true %}<li{% if page.category == "shop" %} class="current"{% endif %}><a href="{{ site.baseurl }}/shop">Shop</a></li>{% endif %}
         </ul>
       </div><!-- /.navbar-collapse -->
+      {% endif %}
+
     </div><!-- /.container-fluid -->
   </nav>
 </header>

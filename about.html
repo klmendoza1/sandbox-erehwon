@@ -4,6 +4,14 @@ category: "about"
 layout: main
 navHide: title
 
+about:
+ - "The Erehwon Arts Foundation is a non-profit organization established in 2012 for the purpose of developing, providing and bringing Philippine culture and art to all sectors of society. It believes in the philosophy that art is essential in the development of the Filipino and the betterment of the members of a community."
+ - "With headquarters at the Erehwon Art Center in Quezon City, Philippines, the Foundation operates in three areas of concern: exhibitions, artist residency, and art policy development. All three areas are supported through donations and contributions from private individuals and institutions."
+
+vision: "To promote art within the Philippines as a means of human and social development, and to promote Philippine art overseas as an expression of Filipino creativity and culture and as the Filipino’s contribution to global cultural exchange and understanding."
+
+mission: "To serve as a center for an active exchange of ideas in art, by encouraging and supporting the interaction between artists of every persuasion and provides a platform for discovering new ideas, and techniques, and technology in expressing creativity in different forms in the visual and performing arts."
+
 missions:
  - "To develop artistic talent and expertise through the provision of spaces for exhibitions, art residency programs, art seminars and consultations, conferences and fora, and publications;"
  - "To advocate for the promotion and consciousness raising of art in public spaces through the cooperation and support of government and private sector entities;"
@@ -48,10 +56,11 @@ coreprograms:
       <div class="row row-limit">
         <div class="col-lg-12">
 
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+          {% for eachabout in page.about %}
+          <p>{{ eachabout }}</p>
+          {% endfor %}
+
+
 
         </div>
       </div>
@@ -64,7 +73,7 @@ coreprograms:
         <div class="col-lg-12">
 
           <h1 class="h1-title text-center">Vision</h1>
-          <p>Erehwon Art Foundation, Incorporated seeks to be the hub and nerve
+          <!--p>Erehwon Art Foundation, Incorporated seeks to be the hub and nerve
             center of the arts in the Philippines, as well as in the Southeast
             Asian region. As a non-stock, non-profit organization devoted to the
             promotion, conservation, and advocacy of the arts, the institution
@@ -72,7 +81,9 @@ coreprograms:
             and patrons to work together for the establishment of a democratic,
             just, and progressive culture of artmaking, art perception, and
             ingraining the arts into daily life.
-          </p>
+          </p-->
+
+          <p>{{ page.vision }}</p>
 
         </div>
       </div>
@@ -85,11 +96,14 @@ coreprograms:
         <div class="col-lg-12">
 
           <h1 class="h1-title text-center">Mission</h1>
-          <ol>
+
+          <!--ol>
             {% for eachmission in page.missions %}
             <li>{{ eachmission }}</li>
             {% endfor %}
-          </ol>
+          </ol-->
+
+          <p>{{ page.mission }}</p>
 
         </div>
       </div>
@@ -105,7 +119,7 @@ coreprograms:
         {% for eachcorevalue in page.corevalues %}
         <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 {% if forloop.index == 4 %} col-lg-offset-2 col-md-offset-2 col-xs-offset-0{% endif %}{% if forloop.index == 5 %} col-lg-offset-0 col-md-offset-0 col-sm-offset-3 col-xs-offset-0{% endif %}">
           <div class="div-coreprogram text-center">
-            <img class="img-responsive" src="{{ site.baseurl }}/images/filler-300x300.jpg">
+            {% if site.switchAboutCoreValuesIllus == true %}<img class="img-responsive" src="{{ site.baseurl }}/images/filler-300x300.jpg">{% endif %}
             <h2>
               {{ eachcorevalue.main }}<br/>
               <small>{{ eachcorevalue.sub }}</small>
@@ -143,7 +157,7 @@ coreprograms:
         {% for eachcoreprogram in page.coreprograms %}
         <div class="col-lg-4">
           <div class="div-coreprogram text-center">
-            <img class="img-responsive" src="{{ site.baseurl }}/images/filler-300x300.jpg">
+            {% if site.switchAboutCoreProgramsIllus == true %}<img class="img-responsive" src="{{ site.baseurl }}/images/filler-300x300.jpg">{% endif %}
             <h2>{{ eachcoreprogram.title }}</h2>
             <p>{{ eachcoreprogram.description }}</p>
           </div>

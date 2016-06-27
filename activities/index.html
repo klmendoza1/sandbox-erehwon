@@ -3,102 +3,54 @@ title: Activities
 category: "activities"
 layout: section-titled
 navHide: title
-
-inteEvents:
- - name: "Pulso"
-   id: "pulso"
-   organizer: "UP College of Fine Arts"
-   venue: "UP College of Fine Arts"
-   day:
-    - "Jan"
-    - "01"
-   time: "9:00 AM to 6:00 PM"
- - name: "Reverb"
-   id: "reverb"
-   organizer: "Mark Justiniani"
-   venue: "UP Vargas Museum"
-   day:
-    - "Jan"
-    - "01"
-    - "Jan"
-    - "03"
-   time: "8:00 AM to 6:00 PM"
- - name: "Volume 1"
-   id: "volumeone"
-   organizer: "Erehwon Art Foundation"
-   venue: "Erehwon Art Center"
-   day:
-    - "Jan"
-    - "01"
-   time: "9:00 AM to 5:00 PM"
-
-exteEvents:
- - name: "Pulso"
-   id: "pulso"
-   organizer: "UP College of Fine Arts"
-   venue: "UP College of Fine Arts"
-   day:
-    - "Jan"
-    - "01"
-   time: "9:00 AM to 6:00 PM"
- - name: "Reverb"
-   id: "reverb"
-   organizer: "Mark Justiniani"
-   venue: "UP Vargas Museum"
-   day:
-    - "Jan"
-    - "01"
-    - "Jan"
-    - "03"
-   time: "8:00 AM to 6:00 PM"
- - name: "Volume 1"
-   id: "volumeone"
-   organizer: "Erehwon Art Foundation"
-   venue: "Erehwon Art Center"
-   day:
-    - "Jan"
-    - "01"
-   time: "9:00 AM to 5:00 PM"
 ---
 
 <section class="section-content">
   <a class="anchor" id="content"></a>
 
+  {% if site.switchActivitiesExhibits == true %}
   <section>
     <a class="anchor" id="gallery"></a>
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12 text-center">
           <h1 class="h1-title h1-title-reduce-bottom">Gallery Schedules</h1>
-          <p>The Erehwon Art Center is open to visitors from 9:00 AM to 5:00 PM</p>
+          <p>The Erehwon Art Center is open to visitors from 9:00 AM to 5:00 PM, and on Saturdays by appointment only.</p>
         </div>
       </div>
 
       <div class="row row-limit">
-        <div class="col-lg-3">
-          <h2>G/F</h2>
+        {% for eachfloor in site.exhibits %}
+        <div class="col-lg-{{ 12 | divided_by: forloop.length }} col-md-{{ 12 | divided_by: forloop.length }} col-sm-{{ 12 | divided_by: forloop.length }} col-xs-12">
+          <h2>{{ eachfloor.floor }}</h2>
+          {% for eachexhibit in eachfloor.exhibits %}
           {% include item-exhibit.html %}
-          {% include item-exhibit.html %}
+          {% endfor %}
         </div>
-        <div class="col-lg-3">
-          <h2>2/F</h2>
-          {% include item-exhibit.html %}
-          {% include item-exhibit.html %}
-        </div>
-        <div class="col-lg-3">
-          <h2>3/F</h2>
-          {% include item-exhibit.html %}
-          {% include item-exhibit.html %}
-        </div>
-        <div class="col-lg-3">
-          <h2>4/F</h2>
-          {% include item-exhibit.html %}
-          {% include item-exhibit.html %}
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
+  {% endif %}
 
+  {% if site.switchActivitiesEventsInte == true %}
+  <section class="section-gray{% if site.switchActivitiesEventsExte == true %} section-link-prev{% endif %}">
+    <a class="anchor" id="events-erehwon"></a>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h1 class="h1-title text-center">Latest Erehwon Events</h1>
+        </div>
+      </div>
+      <div class="row row-limit">
+        {% assign argevents = site.inteEvents %}
+        {% include sectioncontent-events.html %}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if site.switchActivitiesEventsExte == true %}
   <section class="section-gray">
     <a class="anchor" id="events"></a>
     <div class="container-fluid">
@@ -108,37 +60,23 @@ exteEvents:
         </div>
       </div>
       <div class="row row-limit">
-        {% assign argevents = page.exteEvents %}
+        {% assign argevents = site.exteEvents %}
         {% include sectioncontent-events.html %}
       </div>
     </div>
   </section>
+  {% endif %}
 
-  <section class="section-gray section-link-prev">
-    <a class="anchor" id="events-erehwon"></a>
+  {% if site.switchActivitiesEventsExtra == true %}
+  <section class="section-gray{% if site.switchActivitiesEventsExte == true or site.switchActivitiesEventsInte == true %} section-link-prev{% endif %}">
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
-          <h1 class="h1-title text-center">Latest Erehwon Events</h1>
+          <h1 class="h1-title text-center">{% if site.switchActivitiesEventsExte == true or site.switchActivitiesEventsInte == true %}Other{% else %}Featured{% endif %} Erehwon Events</h1>
         </div>
       </div>
       <div class="row row-limit">
-        {% assign argevents = page.inteEvents %}
-        {% include sectioncontent-events.html %}
-      </div>
-    </div>
-  </section>
-
-
-  <section class="section-gray section-link-prev">
-    <div class="container-fluid">
-      <div class="row row-limit">
-        <div class="col-lg-12">
-          <h1 class="h1-title text-center">Other Erehwon Events</h1>
-        </div>
-      </div>
-      <div class="row row-limit">
-        {% for i in (1..4) %}
+        {% for eachevent in site.extraEvents %}
         <div class="col-lg-3">
           {% include item-event.html %}
         </div>
@@ -146,7 +84,9 @@ exteEvents:
       </div>
     </div>
   </section>
+  {% endif %}
 
+  {% if site.switchActivitiesWorkshops == true %}
   <section>
     <a class="anchor" id="workshops"></a>
     <div class="container-fluid">
@@ -155,8 +95,8 @@ exteEvents:
           <h1 class="h1-title text-center">Workshops, Art Classes &amp; Lectures</h1>
         </div>
       </div>
-      {% for i in (1..6) %}
-      {% assign mod = i | modulo:2 %}
+      {% for eachactivity in site.workshops %}
+      {% assign mod = forloop.index | modulo:2 %}
       {% if mod == 1 %}
       <div class="row row-limit">
       {% endif %}
@@ -184,5 +124,7 @@ exteEvents:
       </div>
     </div>
   </section>
+  {% endif %}
+
 
 </section>

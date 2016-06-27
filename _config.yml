@@ -12,3 +12,417 @@ address:
  - Old Balara, Quezon City
 number: +632 384 3507
 email: info@erehwonartworld.com
+
+# feature switches
+
+switchHeaderAnchoring: false
+
+switchActivities: true
+switchActivitiesExhibits: true
+switchActivitiesExhibitsFeature: true
+switchActivitiesEvents: true
+switchActivitiesEventsInte: true
+switchActivitiesEventsExte: false
+switchActivitiesEventsExtra: false
+switchActivitiesEventsFeature: true
+switchActivitiesWorkshops: false
+switchActivitiesWorkshopsFeature: false
+
+switchArtists: false
+switchArtistsWorks: true
+switchArtistsFeature: true
+
+switchAbout: true
+switchAboutCoreValuesIllus: false
+switchAboutCoreProgramsIllus: false
+
+switchShop: false
+switchShopSearch: false
+switchShopOrder: false
+switchShopPaginate: false
+switchShopRelated: false
+switchShopRelatedMore: false
+switchShopRelatedLike: false
+
+# knowledgebase
+
+# exhibits
+
+exhibits:
+ - floor: "G/F"
+   exhibits:
+    - name: "Art and Anthropology"
+      sub: "Portrait of the Object as Filipino"
+      exhibitor: "Various Artists"
+      room: "Erehwon Art Center Lobby"
+      schedule: "August 29, 2015 Formal Unveiling"
+    - name: "Arte Botanica"
+      sub: "Lorem Ipsum Dolor Sit Amet"
+      exhibitor: "Various Artists"
+      room: "Erehwon Art Center Lobby"
+      schedule: "Dates TBA"
+ - floor: "3/F"
+   exhibits:
+    - name: "Bastion"
+      sub: "UP College of Fine Arts Exhibition"
+      exhibitor: "Various Artists"
+      room: "Gallery One"
+      schedule: "Dates TBA"
+ - floor: "4/F"
+   exhibits:
+    - name: "Lorem Ipsum"
+      sub: "A Tribute to Nick Joaquin"
+      exhibitor: "Various Artists"
+      room: "Gallery Two"
+      schedule: "Dates TBA"
+
+# internal events
+
+inteEvents:
+ - name: "Irony"
+   id: "event1"
+   sub: ""
+   organizer: "Various Artists"
+   venue: "UP College of Fine Arts"
+   day:
+    - "Jan"
+    - "01"
+   time: "9:00 AM to 6:00 PM"
+ - name: "Arte Botanica"
+   id: "event2"
+   sub: ""
+   organizer: "Various Artists"
+   venue: "UP Vargas Museum"
+   day:
+    - "Jan"
+    - "01"
+    - "Jan"
+    - "03"
+   time: "8:00 AM to 6:00 PM"
+ - name: "Platform"
+   id: "event3"
+   sub: ""
+   organizer: "Various Artists"
+   venue: "Erehwon Art Center"
+   day:
+    - "Jan"
+    - "01"
+   time: "9:00 AM to 5:00 PM"
+
+# external events
+
+exteEvents:
+ - name: "Bastion"
+   id: "event4"
+   sub: ""
+   organizer: "UP College of Fine Arts"
+   venue: "UP College of Fine Arts"
+   day:
+    - "Jan"
+    - "01"
+   time: "9:00 AM to 6:00 PM"
+
+# small extra events
+
+extraEvents:
+ - name: "Something"
+   organizer: "UP College of Fine Arts"
+   venue: "UP College of Fine Arts"
+   day:
+    - "Jan"
+    - "01"
+   time: "9:00 AM to 6:00 PM"
+ - name: "Reverb"
+   id: "reverb"
+   organizer: "Mark Justiniani"
+   venue: "UP Vargas Museum"
+   day:
+    - "Jan"
+    - "01"
+    - "Jan"
+    - "03"
+   time: "8:00 AM to 6:00 PM"
+ - name: "Volume 1"
+   id: "volumeone"
+   organizer: "Erehwon Art Foundation"
+   venue: "Erehwon Art Center"
+   day:
+    - "Jan"
+    - "01"
+   time: "9:00 AM to 5:00 PM"
+ - name: "Volume 3"
+   id: "volumeone"
+   organizer: "Erehwon Art Foundation"
+   venue: "Erehwon Art Center"
+   day:
+    - "Jan"
+    - "01"
+   time: "9:00 AM to 5:00 PM"
+
+workshops:
+ - name: "Basic Acrylic Painting Workshop"
+   id: "acrylic"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   date: ""
+   time: ""
+   venue: ""
+   photos:
+    - "cover.jpg"
+    - "02.jpg"
+    - "03.jpg"
+ - name: "Basic Gouache Painting Workshop"
+   id: "gouache"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   date: ""
+   time: ""
+   venue: ""
+   photos:
+    - "cover.jpg"
+    - "02.jpg"
+    - "03.jpg"
+ - name: "Basic Watercolor Painting Workshop"
+   id: "watercolor"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   date: ""
+   time: ""
+   venue: ""
+   photos:
+    - "cover.jpg"
+    - "02.jpg"
+    - "03.jpg"
+ - name: "Advanced Oil Painting Workshop"
+   id: "oil"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   date: ""
+   time: ""
+   venue: ""
+   photos:
+    - "cover.jpg"
+    - "02.jpg"
+    - "03.jpg"
+
+# artists
+
+artists:
+ - name: "Juana Dela Cruz"
+   id: "jdelacruz"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Painting"
+    - "Sculpture"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+    - "01.jpg"
+ - name: "Christian San Jose"
+   id: "csanjose"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Digital Art"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "Dan Matutina"
+   id: "dmatutina"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Painting"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "Kay Aranzanso"
+   id: "karanzanso"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Sketching"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "Abbey Sy"
+   id: "asy"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Lettering"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "John Ed De Vera"
+   id: "jdevera"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Mixed Media"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "Jelvin Base"
+   id: "jbase"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Calligraphy"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "Kerby Rosanes"
+   id: "krosanes"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Doodles"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "Risa Rodil"
+   id: "rrodil"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Illustration"
+    - "Lettering"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "Tokwa Penaflorida"
+   id: "tpenaflorida"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Illustration"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "Soleil Ignacio"
+   id: "signacio"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Illustration"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "Rob Cham"
+   id: "rcham"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Illustration"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "JP Cuison"
+   id: "jcuison"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Art Direction"
+    - "Illustration"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"
+ - name: "Vincent Aseo"
+   id: "vaseo"
+   photo: "profile.jpg"
+   cover: "cover-large.jpg"
+   medium:
+    - "Illustration"
+   description:
+    - "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
+    - "Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum."
+   art:
+    - "01.jpg"
+    - "02.jpg"
+    - "03.jpg"
+    - "03.jpg"
+    - "02.jpg"

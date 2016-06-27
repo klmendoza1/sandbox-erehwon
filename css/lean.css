@@ -442,6 +442,10 @@ a.anchor {
   height: 208px
 }
 
+.embed-responsive-square {
+  padding-bottom: 100%;
+}
+
 .nav-pagination {
   text-align: right;
 }

@@ -1,11 +1,11 @@
 <div>
   <h3>
-    Exhibit Title<br/>
-    <small>Exhibit Subitle</small>
+    {{ eachexhibit.name }}<br/>
+    <small>{{ eachexhibit.sub }}</small>
   </h3>
   <div class="span-details">
-    <span>Exhibitor Name</span><br/>
-    <span>Exhibit Room</span><br/>
-    <span>Exhibit Dates</span>
+    <span>{{ eachexhibit.exhibitor }}</span><br/>
+    <span>{{ eachexhibit.room }}</span><br/>
+    <span>{{ eachexhibit.schedule }}</span>
   </div>
 </div>
