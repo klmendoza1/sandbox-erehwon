@@ -189,7 +189,7 @@
   }
   .navbar.navbar-default.navbar-normalize .navbar-toggle .icon-bar,
   .navbar.navbar-default:not(.navbar-normalize) .navbar-toggle .icon-bar {
-    background-color: #7d7d7d;
+    background-color: white !important;
     -webkit-transition: 250ms ease-out;
     -moz-transition: 250ms ease-out;
     -o-transition: 250ms ease-out;

@@ -6,11 +6,15 @@
 {% endif %}
 -->
 
-<a>
+<a data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">
   <div class="panel panel-default panel-work">
     <div class="panel-body">
       <span class="helper"></span>
+      {% if onlyartist %}
       <img class="" src="{{ site.baseurl }}/images/artists/{{ onlyartist.id }}/{{ eachart }}">
+      {% elsif onlyevent %}
+      <img class="" src="{{ site.baseurl }}/images/events/{{ onlyevent.id }}/{{ eachphoto }}">
+      {% endif %}
     </div>
   </div>
   <div class="div-modal-content hidden">

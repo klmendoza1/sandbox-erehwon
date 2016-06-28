@@ -38,13 +38,13 @@ exhibits:
    photo: ""
 
 featureEventsId:
- - "event1"
- - "event2"
- - "event3"
+ - "irony"
+ - "artebotanica"
+ - "platform"
 
 featureActivityId: "acrylic"
 
-featureArtistId: "jdelacruz"
+featureArtistId: "gbella"
 ---
 
 <section id="jumbotron" class="km-jumbotron" style="">
@@ -194,6 +194,9 @@ featureArtistId: "jdelacruz"
         <div class="col-lg-5">
           <img class="img-responsive img-artist-featured" src="{{ site.baseurl }}/images/artists/{{ onlyartist.id }}/{{ onlyartist.photo }}">
           <h2 class="text-center">{{ onlyartist.name }}</h2>
+          {% if onlyartist.excerpt %}
+            <p>{{ onlyartist.excerpt }}</p>
+          {% else %}
           {% for eachdescription in onlyartist.description %}
           {% if forloop.index == 1 %}
           <p>
@@ -201,15 +204,18 @@ featureArtistId: "jdelacruz"
           </p>
           {% endif %}
           {% endfor %}
-          <a href="{{ site.baseurl }}/artists/artist">More about Artist</a><br/>
+          {% endif %}
+          <a href="{{ site.baseurl }}/artists/{{ onlyartist.id }}">More about Artist</a><br/>
           {% if site.switchArtists == true %}<a href="{{ site.baseurl }}/artists">All Artists</a>{% endif %}
         </div>
         <div class="col-lg-7">
           <div class="slick-artist">
             {% for eachart in onlyartist.art %}
             <div>
-              <div class="embed-responsive embed-responsive-4by3">
+              <!--div class="embed-responsive embed-responsive-4by3">
                 <img class="img-responsive" src="{{ site.baseurl }}/images/artists/{{ onlyartist.id }}/{{ eachart }}">
+              </div-->
+              <div class="embed-responsive embed-responsive-4by3" style="background-image:url('{{ site.baseurl }}/images/artists/{{ onlyartist.id }}/{{ eachart }}')">
               </div>
             </div>
             {% endfor %}

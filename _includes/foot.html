@@ -172,6 +172,53 @@
 
 {% endif %}
 
+{% if page.artistDrilldown == true %}
+<script>
+
+$('#exampleModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('whatever') // Extract info from data-* attributes
+  // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+  // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to ' + recipient)
+  modal.find('.modal-body input').val(recipient)
+})
+
+</script>
+
+{% endif %}
+
+{% if page.testCode == true %}
+
+<!--script src="{{ site.baseurl }}/js/masonry.pkgd.min.js"></script-->
+
+<style>
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+.row-masonry {
+ -moz-column-width: 22em;
+ -webkit-column-width: 22em;
+ -moz-column-gap: .0em;
+ -webkit-column-gap: .0em;
+}
+
+.row-masonry .panel {
+ display: inline-block;
+ margin:  .5em;
+ padding:  0;
+ width:96%;
+}
+
+.row-masonry .panel img {
+ width: 100%;
+}
+
+</style>
+
+{% endif %}
+
 {% if page.animate == true %}
   <!--script src="{{ site.baseurl }}js/wow.min.js"></script>
   <script>new WOW().init();</script-->

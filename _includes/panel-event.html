@@ -1,4 +1,4 @@
-<a class="a-event" href="{{ site.baseurl }}/activities/event" target="_blank">
+<a class="a-event" href="{{ site.baseurl }}/activities/event/feature/{{ eachevent.id }}" target="_blank">
   <div class="panel panel-default panel-event">
     <!--div class="panel-heading" style="background-image:url('{{site.baseurl}}/images/filler-320x240.jpg')"-->
     <div class="panel-heading">
@@ -10,16 +10,33 @@
 
         {% for eachday in eachevent.day %}
 
-        {% if forloop.length == 4 %}
-        {% if forloop.index == 3 %}
-        <span>to {{ eachday }}
-        {% elsif forloop.index == 4 %}
-          {{ eachday }}</span>
-        {% else %}
-        <span>{{ eachday }}</span>
+        {% if forloop.index == 1 or forloop.index == 3 %}
+          {% if eachday == "January" %}{% assign month = "Jan" %}
+          {% elsif eachday == "February" %}{% assign month = "Feb" %}
+          {% elsif eachday == "March" %}{% assign month = "Mar" %}
+          {% elsif eachday == "April" %}{% assign month = "Apr" %}
+          {% elsif eachday == "May" %}{% assign month = "May" %}
+          {% elsif eachday == "June" %}{% assign month = "Jun" %}
+          {% elsif eachday == "July" %}{% assign month = "Jul" %}
+          {% elsif eachday == "August" %}{% assign month = "Aug" %}
+          {% elsif eachday == "September" %}{% assign month = "Sep" %}
+          {% elsif eachday == "October" %}{% assign month = "Oct" %}
+          {% elsif eachday == "November" %}{% assign month = "Nov" %}
+          {% elsif eachday == "December" %}{% assign month = "Dec" %}
+          {% else %}{% assign month = "???" %}
+          {% endif %}
         {% endif %}
-        {% else %}
-        <span>{{ eachday }}</span>
+
+        {% if forloop.index == 1 or forloop.index == 2 %}
+        <span>
+          {% if forloop.index == 1 %}{{ month }}
+          {% elsif forloop.index == 2%}{{ eachday }}
+          {% endif %}
+        </span>
+        {% elsif forloop.index == 3 or forloop.index == 4 %}
+        {% if forloop.index == 3 %}<span>to {{ month }}
+        {% elsif forloop.index == 4 %} {{ eachday }}</span>
+        {% endif %}
         {% endif %}
 
         {% endfor %}
@@ -30,6 +47,7 @@
         <span>to Jan 03</span>
 
         {% endif %}
+
       </div>
 
     </div>

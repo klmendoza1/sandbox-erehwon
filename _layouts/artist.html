@@ -2,6 +2,7 @@
 category: "artists"
 artistDrilldown: true
 layout: main
+testCode: true
 ---
 
 {% for onlyartist in site.artists %}
@@ -53,23 +54,25 @@ layout: main
   {% if site.switchArtistsWorks == true %}
   <section>
     <a class="anchor" id="works"></a>
+
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Sample Works</h1>
         </div>
       </div>
-
-
-      <div class="row row-limit">
-      {% for eachart in onlyartist.art %}
-        <div class="col-lg-4 col-md-4 col-sm-6">
-          {% include panel-work.html %}
-        </div>
-      {% endfor %}
-      </div>
-
     </div>
+
+    <div class="container-fluid">
+      <div class="row row-limit row-masonry">
+        {% for eachart in onlyartist.art %}
+        <div class="panel panel-default">
+       		<img src="{{ site.baseurl }}/images/artists/{{ onlyartist.id }}/{{ eachart }}">
+     	  </div>
+        {% endfor %}
+      </div>
+    </div>
+
   </section>
   {% endif %}
 

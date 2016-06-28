@@ -124,3 +124,8 @@
 .slick-dots {
   bottom: 0;
 }
+
+.slick-artist .embed-responsive {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;

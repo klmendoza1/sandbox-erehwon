@@ -7,24 +7,40 @@ layout: main
 {% assign checkmatch = false %}
 
 {% for onlyevent in site.inteEvents %}
-{% if onlyevent.id == page.id %}
-{% assign checkmatch = true %}
-{% break %}
-{% endif %}
+  {% if onlyevent.id == page.id %}
+    {% assign checkmatch = true %}
+    {% break %}
+  {% endif %}
 {% endfor %}
 
 {% if checkmatch == true %}
-{% assign eventscan = site.inteEvents %}
+  {% assign eventscan = site.inteEvents %}
 {% else %}
-{% for onlyevent in site.exteEvents %}
-{% if onlyevent.id == page.id %}
-{% assign checkmatch = true %}
-{% break %}
-{% endif %}
-{% endfor %}
-{% if checkmatch == true %}
-{% assign eventscan = site.exteEvents %}
-{% endif %}
+
+  {% for onlyevent in site.exteEvents %}
+    {% if onlyevent.id == page.id %}
+      {% assign checkmatch = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% if checkmatch == true %}
+    {% assign eventscan = site.exteEvents %}
+  {% else %}
+
+    {% for onlyevent in site.pastEvents %}
+      {% if onlyevent.id == page.id %}
+      {% assign checkmatch = true %}
+      {% break %}
+      {% endif %}
+    {% endfor %}
+
+    {% if checkmatch == true %}
+      {% assign eventscan = site.pastEvents %}
+    {% endif %}
+
+  {% endif %}
+
 {% endif %}
 
 
@@ -100,6 +116,31 @@ layout: main
       </div>
     </div>
   </section>
+
+  {% if site.switchActivitiesEventsPhotos == true %}
+  {% if onlyevent.photos %}
+  <section>
+    <a class="anchor" id="works"></a>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h1 class="h1-title text-center">Photos</h1>
+        </div>
+      </div>
+
+
+      <div class="row row-limit">
+      {% for eachphoto in onlyevent.photos %}
+        <div class="col-lg-3 col-md-3 col-sm-4">
+          {% include panel-work.html %}
+        </div>
+      {% endfor %}
+      </div>
+
+    </div>
+  </section>
+  {% endif %}
+  {% endif %}
 
 </section>
 

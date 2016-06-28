@@ -34,7 +34,7 @@ navHide: title
   {% endif %}
 
   {% if site.switchActivitiesEventsInte == true %}
-  <section class="section-gray{% if site.switchActivitiesEventsExte == true %} section-link-prev{% endif %}">
+  <section class="section-gray">
     <a class="anchor" id="events-erehwon"></a>
     <div class="container-fluid">
       <div class="row row-limit">
@@ -51,7 +51,7 @@ navHide: title
   {% endif %}
 
   {% if site.switchActivitiesEventsExte == true %}
-  <section class="section-gray">
+  <section class="section-gray{% if site.switchActivitiesEventsInte == true %} section-link-prev{% endif %}">
     <a class="anchor" id="events"></a>
     <div class="container-fluid">
       <div class="row row-limit">
@@ -68,7 +68,7 @@ navHide: title
   {% endif %}
 
   {% if site.switchActivitiesEventsExtra == true %}
-  <section class="section-gray{% if site.switchActivitiesEventsExte == true or site.switchActivitiesEventsInte == true %} section-link-prev{% endif %}">
+  <section class="section-gray{% if site.switchActivitiesEventsInte == true or site.switchActivitiesEventsExte == true %} section-link-prev{% endif %}">
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
@@ -82,6 +82,35 @@ navHide: title
         </div>
         {% endfor %}
       </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if site.switchActivitiesEventsPast == true %}
+  <section class="section-gray{% if site.switchActivitiesEventsInte == true or site.switchActivitiesEventsExte == true or site.switchActivitiesEventsExtra == true %} section-link-prev{% endif %}">
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h1 class="h1-title text-center">Gallery</h1>
+        </div>
+      </div>
+      {% for eachevent in site.pastEvents %}
+      <a href="{{ site.baseurl }}/activities/event/gallery/{{ eachevent.id }}">
+        <div class="row row-limit">
+          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+            <div class="embed-responsive embed-responsive-4by3">
+              <img class="img-responsive" src="{{site.baseurl}}/images/filler-320x240-1.jpg">
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-4 col-sm-6 col-xs-12">
+            <h2>{{ eachevent.name }}</h2>
+            <p>
+              {{ eachevent.excerpt }}
+            </p>
+          </div>
+        </div>
+      </a>
+      {% endfor %}
     </div>
   </section>
   {% endif %}

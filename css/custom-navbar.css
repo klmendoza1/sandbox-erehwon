@@ -69,16 +69,24 @@
 .navbar.navbar-default.navbar-normalize .navbar-nav>li>a {
   color: white;
 }
-
+/*
 .navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a,
 .navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:hover,
 .navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:active,
 .navbar.navbar-default.navbar-normalize .navbar-nav>li.current>a,
 .navbar.navbar-default.navbar-normalize .navbar-nav>li.current>a:hover,
-.navbar.navbar-default.navbar-normalize .navbar-nav>li.current>a:active {
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.current>a:active
+*/
+.navbar.navbar-default .navbar-nav>li.active>a,
+.navbar.navbar-default .navbar-nav>li.active>a:hover,
+.navbar.navbar-default .navbar-nav>li.active>a:active,
+.navbar.navbar-default .navbar-nav>li.current>a,
+.navbar.navbar-default .navbar-nav>li.current>a:hover,
+.navbar.navbar-default .navbar-nav>li.current>a:active {
   color: #fffe66;
 }
 
+/*
 .navbar.navbar-default.navbar-normalize .navbar-brand:hover,
 .navbar.navbar-default.navbar-normalize .navbar-brand:active,
 .navbar.navbar-default.navbar-normalize .navbar-nav>li>a:hover,
@@ -86,7 +94,15 @@
 .navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:hover,
 .navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a:active,
 .navbar.navbar-default.navbar-normalize .navbar-nav>li.active.current>a:hover,
-.navbar.navbar-default.navbar-normalize .navbar-nav>li.active.current>a:active {
+.navbar.navbar-default.navbar-normalize .navbar-nav>li.active.current>a:active*/
+.navbar.navbar-default .navbar-brand:hover,
+.navbar.navbar-default .navbar-brand:active,
+.navbar.navbar-default .navbar-nav>li>a:hover,
+.navbar.navbar-default .navbar-nav>li>a:active,
+.navbar.navbar-default .navbar-nav>li.active>a:hover,
+.navbar.navbar-default .navbar-nav>li.active>a:active,
+.navbar.navbar-default .navbar-nav>li.active.current>a:hover,
+.navbar.navbar-default .navbar-nav>li.active.current>a:active {
   color: #ff5501 !important;
 }
 
