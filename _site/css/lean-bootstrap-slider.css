@@ -1,0 +1,9 @@
+.slider.slider-horizontal {
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.tooltip.tooltip-main.bottom.in {
+  z-index: 1029;
+}

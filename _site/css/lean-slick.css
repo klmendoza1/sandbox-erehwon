@@ -1,0 +1,131 @@
+
+.slick-jumbotron {
+  margin-left: -15px;
+  margin-right: -15px;
+  margin-bottom: 0;
+}
+
+
+.slick-jumbotron-panel {
+  padding-top: 48.5px;
+}
+
+.slick-prev,
+.slick-next {
+  height: 100%;
+  z-index: 1;
+  width: 80px;
+}
+
+.slick-prev {
+  left: 0;
+}
+
+.slick-next {
+  right: 0;
+}
+
+.slick-jumbotron .slick-prev:before,
+.slick-jumbotron .slick-next:before {
+  font-family: HelveticaNeue;
+  -webkit-filter: invert(85%);
+    filter: invert(85%);
+}
+
+
+.slick-jumbotron .slick-prev:before {
+  margin-left: 2px;
+  content: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0ibWIyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMiA2NCIgaGVpZ2h0PSI2NHB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiA2NCIgd2lkdGg9IjMycHgiIHg9IjBweCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeT0iMHB4Ij4KPGcgZGlzcGxheT0ibm9uZSIgaWQ9IkxheWVyXzIiPgo8cmVjdCBkaXNwbGF5PSJpbmxpbmUiIGZpbGw9IiNmZmZmZmYiIGhlaWdodD0iMTEyIiB3aWR0aD0iMTI4IiB4PSItNyIgeT0iLTIwIj48L3JlY3Q+CjwvZz4KPGcgaWQ9IkxheWVyXzEiPgo8Zz4KPHBhdGggY2xhc3M9InRyYW5zaXRpb24tYWxsIiBkPSJNMjMuODc3LDY0Yy0wLjYxNywwLTEuMjI3LTAuMjg0LTEuNjE4LTAuODIxbC0yMS44NzUtMzBjLTAuNTEzLTAuNzA0LTAuNTEyLTEuNjU5LDAuMDAzLTIuMzYxbDIyLTMwYzAuNjU0LTAuODksMS45MDQtMS4wODQsMi43OTYtMC40M2MwLjg5MSwwLjY1MywxLjA4MywxLjkwNSwwLjQzMSwyLjc5NUw0LjQ3OCwzMi4wMDNsMjEuMDE0LDI4LjgxOGMwLjY1LDAuODkzLDAuNDU1LDIuMTQ0LTAuNDM4LDIuNzk1QzI0LjY5OCw2My44NzUsMjQuMjg1LDY0LDIzLjg3Nyw2NHoiPjwvcGF0aD4KPC9nPgo8L2c+Cjwvc3ZnPg==");
+}
+
+.slick-jumbotron .slick-next:before {
+  margin-left: -2px;
+  content: url("data:image/svg+xml;base64,PHN2ZyBjbGFzcz0ibWIyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCAzMiA2NCIgaGVpZ2h0PSI2NHB4IiB2ZXJzaW9uPSIxLjEiIHZpZXdCb3g9IjAgMCAzMiA2NCIgd2lkdGg9IjMycHgiIHg9IjBweCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeT0iMHB4Ij4KPGcgZGlzcGxheT0ibm9uZSIgaWQ9IkxheWVyXzIiPgo8cmVjdCBkaXNwbGF5PSJpbmxpbmUiIGZpbGw9IiNmZmZmZmYiIGhlaWdodD0iMTEyIiB3aWR0aD0iMTI4IiB4PSItNzEiIHk9Ii0yMCI+PC9yZWN0Pgo8L2c+CjxnIGlkPSJMYXllcl8xIj4KPGc+CjxwYXRoIGNsYXNzPSJ0cmFuc2l0aW9uLWFsbCIgZD0iTTcuOTk4LDY0Yy0wLjQxLDAtMC44MjQtMC4xMjYtMS4xODEtMC4zODdjLTAuODkxLTAuNjUzLTEuMDgzLTEuOTA1LTAuNDMxLTIuNzk2bDIxLjEzNi0yOC44MjFMNi41MDksMy4xNzhjLTAuNjUtMC44OTMtMC40NTUtMi4xNDQsMC40MzgtMi43OTRDNy44NC0wLjI2Niw5LjA5MS0wLjA3LDkuNzQxLDAuODIybDIxLjg3NSwzMGMwLjUxMywwLjcwNCwwLjUxMiwxLjY1OS0wLjAwMywyLjM2MWwtMjIsMzBDOS4yMjEsNjMuNzE3LDguNjE0LDY0LDcuOTk4LDY0eiI+PC9wYXRoPgo8L2c+CjwvZz4KPC9zdmc+");
+}
+
+.slick-jumbotron-panel-exhibit {
+  height: 100vh;
+  min-height: 640px;
+  max-height: 1200px;
+  background-size: cover;
+  background-position: center center;
+}
+
+.slick-jumbotron-panel-exhibit:after {
+  content: ' ';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5);
+  z-index: -1;
+}
+
+
+.slick-jumbotron-panel-content-outer {
+  display: table;
+  position: absolute;
+  height: calc(100% - 48.5px);
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.slick-jumbotron-panel-content-middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.slick-jumbotron-panel-content-inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: /*whatever width you want*/;
+}
+
+.slick-jumbotron-panel-content {
+
+}
+
+.slick-jumbotron-panel-exhibit .span-artist {
+  display: block;
+  text-align: center;
+}
+
+.slick-jumbotron-panel-exhibit .h1-title {
+  display: block;
+  font-size: 6em;
+  text-align: center;
+  margin-top: 24px;
+  line-height: 1em;
+}
+
+@media (max-width:768px) {
+  .slick-jumbotron-panel-exhibit .h1-title {
+    font-size: 4em;
+  }
+}
+
+.slick-jumbotron-panel-exhibit .h1-title small {
+
+}
+
+.slick-jumbotron-panel-exhibit .span-details {
+  display: block;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.slick-jumbotron-panel-exhibit .a-sched {
+  display: inline;
+}
+
+
+.slick-dots {
+  bottom: 0;
+}
+
+.slick-artist .embed-responsive {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;

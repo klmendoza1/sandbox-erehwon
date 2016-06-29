@@ -1,0 +1,225 @@
+.navbar.navbar-default {
+  position: absolute;
+  background-color: transparent;
+  border-style: none;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar.navbar-default.navbar-normalize {
+  position: fixed;
+  background-color: #F5F5F5;
+  border-style: none;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar.navbar-default .navbar-brand,
+.navbar.navbar-default .navbar-nav>li>a {
+  /*color: white;*/
+  cursor: pointer;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+  border-color: #494343;
+}
+
+.navbar-nav {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-right: 0;
+}
+
+.navbar.navbar-default .navbar-brand {
+  /*text-transform: uppercase;*/
+  font-size: 2em;
+  font-weight: 500;
+  margin-left: 0px;
+  padding-top: 42px;
+  padding-bottom: 35px;
+  height: initial;
+}
+
+.navbar.navbar-default .navbar-brand img {
+  display: inline-block !important;
+  width: 49px;
+}
+
+@media (max-width: 992px) {
+  .navbar.navbar-default .navbar-brand {
+    font-size: 1.5em;
+    padding-top: 24px;
+    padding-bottom: 27px;
+  }
+  .navbar.navbar-default .navbar-brand>span {
+    margin-left: 10px;
+    vertical-align: sub;
+  }
+}
+
+.navbar.navbar-default .navbar-nav>li>a {
+  text-transform: uppercase;
+  padding-top: 40px;
+  padding-bottom: 37px;
+}
+
+@media (max-width: 992px) {
+  .navbar.navbar-default .navbar-nav>li>a {
+    padding-top: 30px;
+    padding-bottom: 26px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar.navbar-default .navbar-nav>li>a {
+    padding-top: 20px;
+    padding-bottom: 17px;
+  }
+}
+
+/*
+.navbar.navbar-default .navbar-nav>li>a.btn-subscribe {
+  color: #a2d4ab;
+  background-color: #494343;
+  border-color: #494343;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+
+.navbar.navbar-default .navbar-nav>li>a.btn-subscribe:hover,
+.navbar.navbar-default .navbar-nav>li>a.btn-subscribe:active,
+.navbar.navbar-default .navbar-nav>li>a.btn-subscribe:focus {
+  color: #494343;
+  background-color: #a2d4ab;
+  border-color: #a2d4ab;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+@media (min-width: 768px) {
+  .navbar.navbar-default .navbar-nav>li>a.btn-subscribe {
+    padding-top: 12px;
+    padding-bottom: 8px;
+    margin-top: 24px;
+    margin-right: 24px;
+    margin-left: 10px;
+  }
+}
+*/
+
+.navbar.navbar-default .navbar-brand:hover,
+.navbar.navbar-default .navbar-nav>li>a:hover,
+.navbar.navbar-default .navbar-nav>li.active>a {
+  color: black;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover {
+  background-color: transparent;
+}
+
+.navbar.navbar-default .navbar-toggle {
+  margin-top: 20px;
+  border-style: none;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+  background-color: transparent;
+}
+
+.navbar-toggle .icon-bar {
+  width: 20px;
+  height: 3px;
+}
+
+.navbar-toggle .icon-bar+.icon-bar {
+  margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+  .navbar.navbar-default {
+    position: fixed;
+    background-color: white;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: #ddd;
+    -webkit-transition: 250ms ease-out;
+    -moz-transition: 250ms ease-out;
+    -o-transition: 250ms ease-out;
+    transition: 250ms ease-out;
+  }
+  .navbar.navbar-default .navbar-brand,
+  .navbar.navbar-default.navbar-normalize .navbar-brand,
+  .navbar.navbar-default:not(.navbar-normalize) .navbar-brand {
+    color: #777;
+    text-shadow: none !important;
+    -webkit-transition: 250ms ease-out;
+    -moz-transition: 250ms ease-out;
+    -o-transition: 250ms ease-out;
+    transition: 250ms ease-out;
+  }
+  .navbar.navbar-default .navbar-brand img {
+    width: 49px;
+    -webkit-transition: 250ms ease-out;
+    -moz-transition: 250ms ease-out;
+    -o-transition: 250ms ease-out;
+    transition: 250ms ease-out;
+  }
+  .navbar.navbar-default.navbar-normalize .navbar-toggle .icon-bar,
+  .navbar.navbar-default:not(.navbar-normalize) .navbar-toggle .icon-bar {
+    background-color: white !important;
+    -webkit-transition: 250ms ease-out;
+    -moz-transition: 250ms ease-out;
+    -o-transition: 250ms ease-out;
+    transition: 250ms ease-out;
+  }
+  .navbar.navbar-default.navbar-normalize .navbar-nav>li>a,
+  .navbar.navbar-default:not(.navbar-normalize) .navbar-nav>li>a {
+    text-shadow: none !important;
+    color: #7d7d7d;
+    -webkit-transition: 250ms ease-out;
+    -moz-transition: 250ms ease-out;
+    -o-transition: 250ms ease-out;
+    transition: 250ms ease-out;
+  }
+  .navbar.navbar-default.navbar-normalize .navbar-nav>li.active>a,
+  .navbar.navbar-default:not(.navbar-normalize) .navbar-nav>li.active>a {
+    color: black;
+    -webkit-transition: 250ms ease-out;
+    -moz-transition: 250ms ease-out;
+    -o-transition: 250ms ease-out;
+    transition: 250ms ease-out;
+  }
+  .navbar.navbar-default.navbar-normalize .navbar-brand:hover,
+  .navbar.navbar-default:not(.navbar-normalize) .navbar-brand:hover,
+  .navbar.navbar-default.navbar-normalize .navbar-brand:active,
+  .navbar.navbar-default:not(.navbar-normalize) .navbar-brand:active,
+  .navbar.navbar-default.navbar-normalize .navbar-nav>li>a:hover,
+  .navbar.navbar-default:not(.navbar-normalize) .navbar-nav>li>a:hover,
+  .navbar.navbar-default.navbar-normalize .navbar-nav>li>a:active,
+  .navbar.navbar-default:not(.navbar-normalize) .navbar-nav>li>a:active {
+    color: black;
+  }
+}
