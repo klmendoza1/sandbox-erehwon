@@ -131,11 +131,14 @@ a.anchor {
   transition: 250ms ease-out;
 }
 
+.a-event,
+.a-event *,
 .a-event:hover,
 .a-event:hover *,
 .a-event *:hover,
 .a-event:hover *:hover {
-  text-decoration: none;
+  text-decoration: none !important;
+  color: #333333;
 }
 
 .panel.panel-default.panel-event {
@@ -192,9 +195,33 @@ a.anchor {
 
 .section-footer-copyright {
   border-style: solid;
-  border-width: 1px 0 0 0;
-  border-color: #262626;
+  border-width: 0;
+  background-color: #333333;
+  color: #afafaf;
+  font-size: 0.75em;
 }
+
+.section-footer-main a,
+.section-footer-main a:link,
+.section-footer-main a:hover,
+.section-footer-main a:focus {
+  text-decoration: none;
+  color: #afafaf;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.section-footer-main a:hover,
+.section-footer-main a:focus {
+  color: white;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
 
 .section-footer-main .col-right span {
   color: white;

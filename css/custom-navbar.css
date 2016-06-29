@@ -170,7 +170,16 @@
 .navbar-default .navbar-form {
   border-color: #494343;
 }
+*/
 
+@media (max-width: 768px) {
+  .navbar-default .navbar-collapse {
+    background-color: #333333;
+    border-style: none;
+  }
+}
+
+/*
 .navbar-nav {
   margin-top: 0;
   margin-bottom: 0;

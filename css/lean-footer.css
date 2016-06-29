@@ -7,22 +7,32 @@
 }
 
 .section-footer-main {
-  padding: 20px;
+  padding: 35px 20px;
 }
 
+/*
 @media(max-width:768px) {
   .section-footer-main {
     padding: 15px;
   }
 }
+*/
 
 .section-footer-copyright {
   padding: 15px;
 }
 
 .col-left>ul {
-
+  margin-bottom: 45px;
 }
+
+/*
+@media (max-width: 768px) {
+  .col-left>ul {
+    margin-top: 30px;
+  }
+}
+*/
 
 .col-left>ul>li>ul {
   padding-left: 15px;
