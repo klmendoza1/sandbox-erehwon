@@ -354,6 +354,7 @@
         </div>
         <div class="col-lg-4">
           <form>
+          <div><p id="returnMessage"></p></div>
             <div class="form-group">
               <label for="inputName">Name</label>
               <input type="text" class="form-control" id="inputName" placeholder="First Name Last Name">
@@ -366,9 +367,7 @@
               <label for="inputMessage">Message</label>
               <textarea class="form-control" id="inputMessage" placeholder="Your message here..." style="width:100%;min-width:100%;max-width:100%;" rows="11"></textarea>
             </div>
-
-
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default" id="submit">Submit</button>
           </form>
         </div>
         <div class="col-lg-8">
@@ -389,7 +388,7 @@
             Old Balara, Quezon City<br/>
             
             +632 384 3507<br/>
-            info@erehwonartworld.com
+            info@erehwonartfoundation.org
           </span>
         </div>
       </div>
@@ -441,7 +440,7 @@
           <span>Old Balara, Quezon City</span><br/>
           
           <span>+632 384 3507</span><br/>
-          <span>info@erehwonartworld.com</span>
+          <span>info@erehwonartfoundation.org</span>
         </div>
       </div>
     </div>
@@ -519,6 +518,37 @@
   $( window ).resize(function() {
     doOnScroll();
   });
+
+$(document).ready(function() {
+    $("#submit").click(function() {
+        var name = $("#inputName").val();
+        var email = $("#inputEmail").val();
+        var message = $("#inputMessage").val();
+        // console.log(name);
+        // console.log(email);
+        // console.log(message);
+        $("#returnMessage").empty(); // To empty previous error/success message.
+        // Checking for blank fields.
+        if (name == '' || email == '') {
+            alert("Please Fill Required Fields");
+        } else {
+            // Returns successful data submission message when the entered information is stored in database.
+            $.post("contact_form.php", {
+                name1: name,
+                email1: email,
+                message1: message,
+                
+            }, function(data) {
+                $("#returnMessage").append(data); // Append returned message to message paragraph.
+                if (data == "Your query has been received, we will contact you soon.") {
+                    $("#form")[0].reset(); // To reset form fields on success.
+                }
+            });
+        }
+    });
+});
+
+
 </script>
 
 
