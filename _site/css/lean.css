@@ -117,6 +117,12 @@ a.anchor {
   color: #333333;
 }
 
+.panel-event {
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .panel-event .panel-heading {
   background-size: cover;
   background-position: center center;
@@ -129,6 +135,11 @@ a.anchor {
   margin-right: -15px;
   margin-top: -10px;
   margin-bottom: -10px;
+}
+
+.panel-event .panel-heading .embed-responsive img {
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .panel-event .panel-heading .panel-event-date {
@@ -177,6 +188,10 @@ a.anchor {
 .panel-event .panel-body h2 {
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+.a-gallery img {
+  min-width: 100%;
 }
 
 .a-gallery:not(:last-of-type) .row {

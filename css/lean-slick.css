@@ -125,7 +125,18 @@
   bottom: 0;
 }
 
+.slick-artist {
+  max-width: 540px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .slick-artist .embed-responsive {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+.item-exhibit {
+  margin-bottom: 15px;
+}

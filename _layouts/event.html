@@ -118,8 +118,8 @@ testCode: true
     </div>
   </section>
 
-  {% if site.switchActivitiesEventsPhotos == true or page.switchActivitiesEventsPhotos == true %}
-  <!-- if onlyevent.photos -->
+  {% if site.switchActivitiesEventsPhotos == true %}
+  {% if onlyevent.photos %}
   <section>
     <a class="anchor" id="works"></a>
     <div class="container-fluid">
@@ -130,24 +130,14 @@ testCode: true
       </div>
 
 
-      <!--div class="row row-limit">
-      {% for eachphoto in onlyevent.photos %}
-        <div class="col-lg-3 col-md-3 col-sm-4">
-          {% include panel-work.html %}
-        </div>
-      {% endfor %}
-      </div-->
-
       <div class="container-fluid">
         <div class="row row-limit">
           <div class="col-lg-12">
 
-            <div class="photoset-grid-lightbox" data-layout="131" style="visibility: hidden;">
-              <img src="{{ site.baseurl }}/images/demo/withhearts1-highres.jpg" width="1280" height="1707" data-highres="{{ site.baseurl }}/images/demo/withhearts1-highres.jpg">
-              <img src="{{ site.baseurl }}/images/demo/withhearts2-500px.jpg" width="500" height="663" data-highres="{{ site.baseurl }}/images/demo/withhearts2-500px.jpg">
-              <img src="{{ site.baseurl }}/images/demo/withhearts3-500px.jpg" width="500" height="500" data-highres="{{ site.baseurl }}/images/demo/withhearts3-500px.jpg">
-              <img src="{{ site.baseurl }}/images/demo/withhearts4-500px.jpg" width="500" height="500" data-highres="{{ site.baseurl }}/images/demo/withhearts4-500px.jpg">
-              <img src="{{ site.baseurl }}/images/demo/withhearts5-highres.jpg" width="1280" height="1280" data-highres="{{ site.baseurl }}/images/demo/withhearts5-highres.jpg">
+            <div class="photoset-grid-lightbox" data-layout="{% for eachphoto in onlyevent.photos %}{% assign length = forloop.length %}{% break %}{% endfor %}{% assign modulo = length | modulo: 6 %}{% assign quotient = length | divided_by: 6 %}{% for i in (1..quotient) %}231{% endfor %}{% if modulo >= 2 and modulo != 3 %}2{% assign modulo = modulo | minus: 2 %}{% if modulo == 2 %}2{% assign modulo = modulo | minus: 2 %}{% endif %}{% endif %}{% if modulo >= 3 %}3{% assign modulo = modulo | minus: 3 %}{% endif %}{% if modulo >= 1 %}1{% assign modulo = modulo | minus: 1 %}{% endif %}" style="visibility: hidden;">
+              {% for eachphoto in onlyevent.photos %}
+              <img src="{{ site.baseurl }}/images/events/{{ onlyevent.id }}/{{ eachphoto.name }}" width="{{ eachphoto.width }}" height="{{ eachphoto.height }}">
+              {% endfor %}
             </div>
 
           </div>
@@ -157,7 +147,7 @@ testCode: true
 
     </div>
   </section>
-<!--endif-->
+  {% endif %}
   {% endif %}
 
 </section>
