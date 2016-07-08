@@ -1,6 +1,7 @@
 # Site settings
 title: Erehwon Art Foundation, Inc.
 baseurl: http://toffmendoza.me/sandbox-erehwon
+#baseurl: http://erehwonartfoundation.org
 
 # Build settings
 markdown: kramdown

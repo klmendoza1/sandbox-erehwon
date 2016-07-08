@@ -7,11 +7,13 @@
             <li><a href="{{ site.baseurl }}/">Home</a></li>
             {% if site.switchActivities == true %}
             <li>
-              <a>Activities</a>
+              <a href="{{ site.baseurl }}/activities/">Activities</a>
               <ul class="list-unstyled">
-                <li><a href="{{ site.baseurl }}/activities/#gallery">Gallery Schedules</a></li>
+                <li><a href="{{ site.baseurl }}/activities/#schedule">Exhibition Schedules</a></li>
+                {% if site.switchActivitiesEventsMixed == true %}<li><a href="{{ site.baseurl }}/activities/#featured">Featured Art Events</a></li>{% endif %}
                 {% if site.switchActivitiesEventsInte == true or site.switchActivitiesEventsExte == true %}<li><a href="{{ site.baseurl }}/activities/#events">Erehwon and Other Art Events</a></li>{% endif %}
-                {% if site.switchActivitiesWorkshops == true %}<li><a href="{{ site.baseurl }}/activities/#gallery">Workshops, Lectures &amp; Art Classes</a></li>{% endif %}
+                {% if site.switchActivitiesWorkshops == true %}<li><a href="{{ site.baseurl }}/activities/#workshops">Workshops, Lectures &amp; Art Classes</a></li>{% endif %}
+                {% if site.switchActivitiesEventsPast == true %}<li><a href="{{ site.baseurl }}/activities/#gallery">Featured Art Events</a></li>{% endif %}
               </ul>
             </li>
             {% endif %}
@@ -20,11 +22,11 @@
             {% endif %}
             {% if site.switchAbout == true %}
             <li>
-              <a>About</a>
+              <a href="{{ site.baseurl }}/about/">About</a>
               <ul class="list-unstyled">
-                <li><a>Core Values &amp; Objectives</a></li>
-                <li><a>Core Programs</a></li>
-                <li><a>Contact</a></li>
+                <li><a href="{{ site.baseurl }}/about/#values">Core Values</a></li>
+                <li><a href="{{ site.baseurl }}/about/#programs">Core Programs</a></li>
+                <li><a href="{{ site.baseurl }}/about/#contact">Contact</a></li>
               </ul>
             </li>
             {% endif %}

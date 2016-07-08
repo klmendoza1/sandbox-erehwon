@@ -241,3 +241,30 @@ $('.photoset-grid-lightbox').photosetGrid({
   <!--script src="{{ site.baseurl }}js/wow.min.js"></script>
   <script>new WOW().init();</script-->
 {% endif %}
+
+{% if page.category == "about" %}
+
+<!-- THIS IS FOR THE ABOUT PAGE -->
+
+<script>
+
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, "\\$&");
+  var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
+var submit = getParameterByName('submit');
+
+$(document).ready(function(){
+  if (submit=="success") {
+    $('.alert-form-contact').show().delay(1000).fadeOut(3000);
+  }
+});
+</script>
+
+{% endif %}

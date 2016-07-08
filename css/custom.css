@@ -20,7 +20,8 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
 
 .section-content>.section-red h1,
 .section-content>.section-red h2,
-.section-content>.section-red p {
+.section-content>.section-red p,
+.section-content>.section-red small {
   color: white;
 }
 
@@ -151,6 +152,14 @@ a.anchor {
   text-shadow: 1px 1px 5px rgba(0,0,0,0);
   color: #7d7d7d;
   background-color: white;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.section-dark.section-red .btn.btn-default span {
+  color: white;
   -webkit-transition: 250ms ease-out;
   -moz-transition: 250ms ease-out;
   -o-transition: 250ms ease-out;
@@ -387,4 +396,14 @@ a.anchor {
 
 .text-center-sm {
   text-align: center;
+}
+
+.alert.alert-form-contact {
+  position: fixed;
+  top: 108px;
+  left: 15px;
+}
+
+.div-coreprogram {
+  margin-bottom: 30px;
 }

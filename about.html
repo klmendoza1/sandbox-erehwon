@@ -112,7 +112,8 @@ coreprograms:
     </div>
   </section>
 
-  <section class="section-gray">
+  <section class="section-red">
+    <a class="anchor" id="values"></a>
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
@@ -151,13 +152,14 @@ coreprograms:
   </section-->
 
   <section>
+    <a class="anchor" id="programs"></a>
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Core Programs</h1>
         </div>
         {% for eachcoreprogram in page.coreprograms %}
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
           <div class="div-coreprogram text-center">
             {% if site.switchAboutCoreProgramsIllus == true %}<img class="img-responsive" src="{{ site.baseurl }}/images/filler-300x300.jpg">{% endif %}
             <h2>{{ eachcoreprogram.title }}</h2>
@@ -169,13 +171,14 @@ coreprograms:
     </div>
   </section>
 
-  <section class="section-gray">
+  <section class="section-gray section-light">
+    <a class="anchor" id="contact"></a>
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Contact Us</h1>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
           <form>
             <div class="form-group">
               <label for="inputName">Name</label>
@@ -191,11 +194,11 @@ coreprograms:
             </div>
 
 
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="btn btn-default" style="margin-bottom:15px;">Submit</button>
           </form>
         </div>
-        <div class="col-lg-8">
-          <span>We're glad to hear from you!</span>
+        <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+          <strong>We're glad to hear from you!</strong>
           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
             nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
             volutpat.</p>
@@ -218,3 +221,10 @@ coreprograms:
   </section>
 
 </section>
+
+<div "alert-parent">
+  <div class="alert alert-form-contact alert-success alert-dismissible" role="alert" style="display:none">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    Thanks for your feedback! We will attend to you shortly via e-mail.
+  </div>
+</div>
