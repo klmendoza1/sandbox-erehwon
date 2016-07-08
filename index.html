@@ -7,40 +7,32 @@ allocateBottom: true
 slick: true
 animate: true
 
-exhibits:
- - name: "Amazing F"
-   id: "amazingf"
-   sub: "An Art Exhibit to Honor the Filipino Woman"
-   exhibitor: "Various Artists"
-   room: "Room TBA"
-   schedule: "March 24 to April 12, 2014"
-   photo: ""
- - name: "Volume III: Pumapapel"
-   id: "pumapapel"
-   sub: "An Exhibition of Artworks on Paper and of Paper by 1000 Artists from the Different Regions of the Philippines"
-   exhibitor: "Various Artists"
-   room: "Room TBA"
-   schedule: "February 25 to March 25, 2015"
-   photo: ""
- - name: "Art and Anthropology"
-   id: "artanthro"
-   sub: "Portrait of the Object as Filipino"
-   exhibitor: "Various Artists"
-   room: "Room TBA"
-   schedule: "August 29, 2015 Formal Unveiling"
-   photo: ""
- - name: "Tuguegarao Lorem Ipsum"
-   id: "tuguegarao"
-   sub: "Lorem Ipsum Dolor Sit Amet"
-   exhibitor: "Various Artists"
-   room: "Room TBA"
-   schedule: "Dates TBA"
-   photo: ""
+# exhibits:
+# - name: "Amazing F"
+#   id: "amazingf"
+#   sub: "An Art Exhibit to Honor the Filipino Woman"
+#   exhibitor: "Various Artists"
+#   room: "Room TBA"
+#   schedule: "March 24 to April 12, 2014"
+#   photo: ""
+# - name: "Art and Anthropology"
+#   id: "artanthro"
+#   sub: "Portrait of the Object as Filipino"
+#   exhibitor: "Various Artists"
+#   room: "Room TBA"
+#   schedule: "August 29, 2015 Formal Unveiling"
+#   photo: ""
+# - name: "Tuguegarao Lorem Ipsum"
+#   id: "tuguegarao"
+#   sub: "Lorem Ipsum Dolor Sit Amet"
+#   exhibitor: "Various Artists"
+#   room: "Room TBA"
+#   schedule: "Dates TBA"
+#   photo: ""
 
 featureEventsId:
- - "irony"
  - "artebotanica"
- - "platform"
+ - "bastion"
 
 featureActivityId: "acrylic"
 
@@ -51,10 +43,9 @@ featureArtistId: "gbella"
   <div class="container-fluid">
     <div class="row">
       <div class="col-lg-12">
+        {% if page.exhibits %}
         <div class="slick-jumbotron">
           {% for eachexhibit in page.exhibits %}
-          {% assign mod = forloop.index | modulo:2 %}
-          <!--div class="slick-jumbotron-panel slick-jumbotron-panel-exhibit" style="background-image:url('{{ site.baseurl }}/images/filler-1600x1200-{% if mod == 1 %}1{% else %}2{% endif %}.jpg')"-->
           <div class="slick-jumbotron-panel slick-jumbotron-panel-exhibit" style="background-image:url('{{ site.baseurl }}/images/exhibits/{{ eachexhibit.id }}/cover.jpg')">
               <div class="slick-jumbotron-panel-content-outer">
                 <div class="slick-jumbotron-panel-content-middle">
@@ -76,6 +67,28 @@ featureArtistId: "gbella"
           </div>
           {% endfor %}
         </div>
+        {% else %}
+        <div class="slick-jumbotron">
+          <div class="slick-jumbotron-panel slick-jumbotron-panel-exhibit slick-jumbotron-panel-masthead" style="background-image:url('{{ site.baseurl }}/images/masthead.jpg');background-size:cover;background-attachment:fixed">
+              <div class="slick-jumbotron-panel-content-outer">
+                <div class="slick-jumbotron-panel-content-middle">
+                  <div class="slick-jumbotron-panel-content-inner">
+                    <!--span class="span-artist">Erehwon.</span-->
+                    <h1 class="h1-title">"Everybody knows this is nowhere."</h1><!--br/-->
+                    <h1 class="h1-subtitle"><small style="font-style:italic">- Neil Young -</small></h1>
+                    <div class="span-details">
+                      <span>Founded in 2012, Erehwon Art Foundation aims to be at the forefront of the Philippine art scene.</span>
+                    </div>
+                    <div class="div-sched text-center">
+                      <a href="#content" class="btn btn-default">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        {% endif %}
       </div>
     </div>
   </div>
@@ -85,7 +98,7 @@ featureArtistId: "gbella"
   <a class="anchor" id="content"></a>
 
   {% if site.switchActivitiesEventsFeature == true %}
-  <section>
+  <section class="section-light">
     <a class="anchor" id="activities"></a>
     <div class="container-fluid">
       <div class="row row-limit">
@@ -96,6 +109,8 @@ featureArtistId: "gbella"
 
       <div class="row row-limit">
         {% for eacheventid in page.featureEventsId %}
+        {% assign bigforLength = forloop.length %}
+        {% assign bigforIndex = forloop.index %}
 
         {% assign checkmatch = false %}
 
@@ -123,7 +138,7 @@ featureArtistId: "gbella"
         {% for onlyevent in eventscan %}
         {% if onlyevent.id == eacheventid %}
         {% assign eachevent = onlyevent %}
-        <div class="col-lg-4 col-md-4 col-sm-4">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12{% if bigforLength == 2 and bigforIndex == 1 %} col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-offset-0{% endif %}">
           {% include panel-event.html %}
         </div>
         {% endif %}
@@ -133,8 +148,8 @@ featureArtistId: "gbella"
       </div>
 
       <div class="row row-limit">
-        <div class="col-lg-12">
-          <a href="{{ site.baseurl }}/activities/#events">More Events</a>
+        <div class="col-lg-12 text-center">
+          <a class="btn btn-default" href="{{ site.baseurl }}/activities/#events">More Events</a>
         </div>
       </div>
 
@@ -184,14 +199,14 @@ featureArtistId: "gbella"
   {% if site.switchArtistsFeature == true %}
   {% for onlyartist in site.artists %}
   {% if onlyartist.id == page.featureArtistId %}
-  <section class="section-gray section-red">
+  <section class="section-gray section-dark section-red">
     <a class="anchor" id="artists"></a>
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
           <h1 class="h1-title text-center">Featured Artist</h1>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">
           <img class="img-responsive img-artist-featured" src="{{ site.baseurl }}/images/artists/{{ onlyartist.id }}/{{ onlyartist.photo }}">
           <h2 class="text-center">{{ onlyartist.name }}</h2>
           {% if onlyartist.excerpt %}
@@ -205,10 +220,12 @@ featureArtistId: "gbella"
           {% endif %}
           {% endfor %}
           {% endif %}
-          <a href="{{ site.baseurl }}/artists/{{ onlyartist.id }}">More about Artist</a><br/>
-          {% if site.switchArtists == true %}<a href="{{ site.baseurl }}/artists">All Artists</a>{% endif %}
+          <div class="text-center-sm">
+            <a class="btn btn-default" style="margin-bottom:30px;" href="{{ site.baseurl }}/artists/{{ onlyartist.id }}">More<span class="hidden-xs"> about Artist</span></a><br/>
+            {% if site.switchArtists == true %}<a class="btn btn-default" href="{{ site.baseurl }}/artists">All Artists</a>{% endif %}
+          </div>
         </div>
-        <div class="col-lg-7">
+        <div class="col-lg-7 col-lg-7 col-sm-6 col-xs-12">
           <div class="slick-artist">
             {% for eachart in onlyartist.art %}
             <div>
@@ -231,28 +248,29 @@ featureArtistId: "gbella"
   {% endfor %}
   {% endif %}
 
-  <section>
-    <a class="anchor" id="about"></a>
-    <div class="container-fluid">
-      <div class="row row-limit">
-        <div class="col-lg-12">
-          <img class="center-block" src="{{ site.baseurl }}/images/logo-glyph-color.png" style="margin-bottom:60px;">
-          <h1 class="h1-title text-center">Erehwon<br/>
-            <small>Art Foundation, Inc.</small>
-          </h1>
-          <p>
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-          </p>
-        </div>
-        <div class="col-lg-12">
-          <a href="{{ site.baseurl }}/about">About Us</a>
+  <section class="section-dark" style="background-image:url('{{ site.baseurl }}/images/bg-about.jpg');background-size:cover;background-attachment:fixed">
+    <div class="div-overlay-black" style="background-color:rgba(0,0,0,0.75);margin-top:-60px;padding-top:60px;margin-bottom:-60px;padding-bottom:60px;">
+      <a class="anchor" id="about"></a>
+      <div class="container-fluid">
+        <div class="row row-limit">
+          <div class="col-lg-12">
+            <img class="center-block" src="{{ site.baseurl }}/images/logo-glyph-color.png" style="margin-bottom:60px;">
+            <h1 class="h1-title text-center">Erehwon<br/>
+              <small>Art Foundation, Inc.</small>
+            </h1>
+            <p>
+              The Erehwon Arts Foundation is a non-profit organization established in 2012 for
+              the purpose of developing, providing and bringing Philippine culture and art to all
+              sectors of society. It believes in the philosophy that art is essential in the
+              development of the Filipino and the betterment of the members of a community.
+            </p>
+          </div>
+          <div class="col-lg-12 text-center">
+            <a class="btn btn-default" href="{{ site.baseurl }}/about">About Us</a>
+          </div>
         </div>
       </div>
     </div>
-
   </section>
 
 </section>

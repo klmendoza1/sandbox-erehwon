@@ -27,7 +27,7 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
 
 
 .section-allocate-top {
-  margin-top: 96px;
+  margin-top: 92px;
 }
 
 @media(max-width: 992px) {
@@ -45,7 +45,8 @@ h1 small, h2 small, h3 small, h4 small, h5 small, h6 small,
 a.anchor {
   display: block;
   position: relative;
-  top: calc(-100px - 55px);
+  /*top: calc(-100px - 55px);*/
+  top: calc(-93px);
   visibility: hidden;
 }
 
@@ -101,7 +102,7 @@ a.anchor {
   color: #fbfbfb;
 }
 
-.div-sched .btn.btn-default {
+.div-sched .btn.btn-default, .section-dark .btn.btn-default {
   border-radius: 0;
   border-width: 3px;
   border-color: white;
@@ -119,12 +120,60 @@ a.anchor {
   transition: 250ms ease-out;
 }
 
+.section-light .btn.btn-default {
+  border-radius: 0;
+  border-width: 3px;
+  border-color: #bb3030;
+  color: #bb3030;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 5px;
+  font-size: 1.25em;
+  padding: 10px 10px 10px 16px;
+  box-shadow: inset 1px 1px 5px rgba(0,0,0,0.22), 1px 1px 5px rgba(0,0,0,0.22);
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.section-light .item-gallery .btn.btn-default {
+  padding: 6px 4px 6px 10px;
+  font-size: 1em;
+}
+
 .div-sched .btn.btn-default:hover,
-.div-sched .btn.btn-default:active {
+.div-sched .btn.btn-default:active,
+.section-dark .btn.btn-default:hover,
+.section-dark .btn.btn-default:active {
   box-shadow: 1px 1px 5px rgba(0,0,0,0.22);
   text-shadow: 1px 1px 5px rgba(0,0,0,0);
   color: #7d7d7d;
   background-color: white;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.section-dark.section-red .btn.btn-default:hover,
+.section-dark.section-red .btn.btn-default:active,
+.section-dark.section-red .btn.btn-default:hover span,
+.section-dark.section-red .btn.btn-default:active span {
+  color: #bb3030;
+  -webkit-transition: 250ms ease-out;
+  -moz-transition: 250ms ease-out;
+  -o-transition: 250ms ease-out;
+  transition: 250ms ease-out;
+}
+
+.section-light .btn.btn-default:hover,
+.section-light .btn.btn-default:active {
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.22);
+  text-shadow: 1px 1px 5px rgba(0,0,0,0);
+  color: white;
+  background-color: #bb3030;
   -webkit-transition: 250ms ease-out;
   -moz-transition: 250ms ease-out;
   -o-transition: 250ms ease-out;
@@ -242,6 +291,21 @@ a.anchor {
 .a-gallery *:hover,
 .a-gallery:hover *:hover {
   text-decoration: none !important;
+  cursor: pointer;
+}
+
+.item-gallery {
+  color: black;
+}
+
+.item-gallery h2 {
+  margin-top: 0;
+}
+
+@media (max-width: 768px) {
+  .item-gallery h2 {
+    margin-top: 15px;
+  }
 }
 
 .section-title h1 {
@@ -254,6 +318,10 @@ a.anchor {
 
 .section-event-header {
 
+}
+
+.section-event-header h1 small {
+  color: white;
 }
 
 .section-artist-header {
@@ -304,5 +372,19 @@ a.anchor {
 
 
 .section-footer-main .col-right span {
-  color: white;
+  color: black;
+}
+
+.writeup-highlight {
+  font-style: italic;
+  margin-top: 55px !important;
+  margin-bottom: 55px !important;
+}
+
+.section-dark * {
+  color: white
+}
+
+.text-center-sm {
+  text-align: center;
 }

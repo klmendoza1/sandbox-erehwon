@@ -115,7 +115,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="/">
-          <img class="visible-xs img-brand" src="/images/logo-glyph-white.png">
+          <img class="visible-xs img-brand" src="/images/logo-glyph-color.png">
           <span>Erehwon<span class="hidden-xs"> Art Foundation<span class="hidden-sm">, Inc.</span></span></span>
         </a>
       </div>
@@ -145,9 +145,7 @@
       <div class="row row-limit">
         <div class="col-lg-12 text-center">
           <h1>About</h1>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-          volutpat.</p>
+          <p>Established in 2012, the foundation believes in the philosophy that art is essential in the development of the Filipino and the betterment of the members of a community.</p>
         </div>
       </div>
     </div>
@@ -179,7 +177,7 @@
   <section class="section-link-prev">
     <div class="container-fluid">
       <div class="row row-limit">
-        <div class="col-lg-12">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
           <h1 class="h1-title text-center">Vision</h1>
           <!--p>Erehwon Art Foundation, Incorporated seeks to be the hub and nerve
@@ -195,14 +193,14 @@
           <p>To promote art within the Philippines as a means of human and social development, and to promote Philippine art overseas as an expression of Filipino creativity and culture and as the Filipino’s contribution to global cultural exchange and understanding.</p>
 
         </div>
-      </div>
+      <!--/div>
     </div>
   </section>
 
   <section class="section-link-prev">
     <div class="container-fluid">
-      <div class="row row-limit">
-        <div class="col-lg-12">
+      <div class="row row-limit"-->
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
           <h1 class="h1-title text-center">Mission</h1>
 
@@ -284,7 +282,7 @@
     </div>
   </section>
 
-  <section class="section-gray section-link-prev">
+  <!--section class="section-gray section-link-prev">
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
@@ -302,14 +300,14 @@
             
             <li>To stimulate qualitative and relevant artmaking in the Philippines and Southeast Asia through educational programs, database collection, documentation and research, and arts scholarship; and</li>
             
-            <li>To encourages artists to excel in their respective fields of endeavor through effective arts management, collections, and exchanges.</li>
+            <li>To encourage artists to excel in their respective fields of endeavor through effective arts management, collections, and exchanges.</li>
             
           </ol>
 
         </div>
       </div>
     </div>
-  </section>
+  </section-->
 
   <section>
     <div class="container-fluid">
@@ -354,7 +352,6 @@
         </div>
         <div class="col-lg-4">
           <form>
-          <div><p id="returnMessage"></p></div>
             <div class="form-group">
               <label for="inputName">Name</label>
               <input type="text" class="form-control" id="inputName" placeholder="First Name Last Name">
@@ -367,7 +364,9 @@
               <label for="inputMessage">Message</label>
               <textarea class="form-control" id="inputMessage" placeholder="Your message here..." style="width:100%;min-width:100%;max-width:100%;" rows="11"></textarea>
             </div>
-            <button type="submit" class="btn btn-default" id="submit">Submit</button>
+
+
+            <button type="submit" class="btn btn-default">Submit</button>
           </form>
         </div>
         <div class="col-lg-8">
@@ -404,7 +403,7 @@
   <section class="section-footer-main">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-6 col-left">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 col-left">
           <ul class="list-unstyled">
             <li><a href="/">Home</a></li>
             
@@ -412,7 +411,7 @@
               <a>Activities</a>
               <ul class="list-unstyled">
                 <li><a href="/activities/#gallery">Gallery Schedules</a></li>
-                <li><a href="/activities/#events">Erehwon and Other Art Events</a></li>
+                
                 
               </ul>
             </li>
@@ -431,16 +430,18 @@
             
           </ul>
         </div>
-        <div class="col-lg-6 col-right">
-          <img class="img-responsive" src="/images/logo-full-white.png">
-          <span><strong>Erehwon Art Center</strong></span><br/>
-          
-          <span>1 Don Francisco, Villa Beatriz</span><br/>
-          
-          <span>Old Balara, Quezon City</span><br/>
-          
-          <span>+632 384 3507</span><br/>
-          <span>info@erehwonartfoundation.org</span>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 col-right">
+          <div>
+            <img class="img-responsive" src="/images/logo-full-color.png">
+            <span><strong>Erehwon Art Center</strong></span><br/>
+            
+            <span>1 Don Francisco, Villa Beatriz</span><br/>
+            
+            <span>Old Balara, Quezon City</span><br/>
+            
+            <span>+632 384 3507</span><br/>
+            <span>info@erehwonartfoundation.org</span>
+          </div>
         </div>
       </div>
     </div>
@@ -518,37 +519,6 @@
   $( window ).resize(function() {
     doOnScroll();
   });
-
-$(document).ready(function() {
-    $("#submit").click(function() {
-        var name = $("#inputName").val();
-        var email = $("#inputEmail").val();
-        var message = $("#inputMessage").val();
-        // console.log(name);
-        // console.log(email);
-        // console.log(message);
-        $("#returnMessage").empty(); // To empty previous error/success message.
-        // Checking for blank fields.
-        if (name == '' || email == '') {
-            alert("Please Fill Required Fields");
-        } else {
-            // Returns successful data submission message when the entered information is stored in database.
-            $.post("contact_form.php", {
-                name1: name,
-                email1: email,
-                message1: message,
-                
-            }, function(data) {
-                $("#returnMessage").append(data); // Append returned message to message paragraph.
-                if (data == "Your query has been received, we will contact you soon.") {
-                    $("#form")[0].reset(); // To reset form fields on success.
-                }
-            });
-        }
-    });
-});
-
-
 </script>
 
 

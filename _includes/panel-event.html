@@ -1,12 +1,16 @@
-<a class="a-event" href="{{ site.baseurl }}/activities/event/feature/{{ eachevent.id }}" target="_blank">
+<a class="a-event" href="{{ site.baseurl }}/activities/event/feature/{{ eachevent.id }}">
   <div class="panel panel-default panel-event">
     <!--div class="panel-heading" style="background-image:url('{{site.baseurl}}/images/filler-320x240.jpg')"-->
     <div class="panel-heading">
       <div class="embed-responsive embed-responsive-4by3">
         <img class="img-responsive" src="{{site.baseurl}}/images/events/{{ eachevent.id }}/cover.jpg">
       </div>
+
+      {% if eachevent.day %}
       <div class="panel-event-date">
         {% if eachevent %}
+
+
 
         {% for eachday in eachevent.day %}
 
@@ -48,6 +52,7 @@
         {% endif %}
 
       </div>
+      {% endif %}
 
     </div>
     <div class="panel-body">

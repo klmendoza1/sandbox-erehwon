@@ -3,6 +3,12 @@ title: Activities
 category: "activities"
 layout: section-titled
 navHide: title
+
+featureEventsId:
+ - "artebotanica"
+ - "bastion"
+
+description: "Erehwon has been very active in the Philippine art scene since its conception. Aside from hosting events and housing exhibitions, the foundation also offers workshops and lectures occasionally."
 ---
 
 <section class="section-content">
@@ -33,13 +39,67 @@ navHide: title
   </section>
   {% endif %}
 
+  {% if site.switchActivitiesEventsMixed == true %}
+  <section class="section-gray section-light">
+    <a class="anchor" id="activities"></a>
+    <div class="container-fluid">
+      <div class="row row-limit">
+        <div class="col-lg-12">
+          <h1 class="h1-title text-center">Featured Art Events</h1>
+        </div>
+      </div>
+
+      <div class="row row-limit">
+        {% for eacheventid in page.featureEventsId %}
+        {% assign bigforLength = forloop.length %}
+        {% assign bigforIndex = forloop.index %}
+
+        {% assign checkmatch = false %}
+
+        {% for onlyevent in site.inteEvents %}
+        {% if onlyevent.id == eacheventid %}
+        {% assign checkmatch = true %}
+        {% break %}
+        {% endif %}
+        {% endfor %}
+
+        {% if checkmatch == true %}
+        {% assign eventscan = site.inteEvents %}
+        {% else %}
+        {% for onlyevent in site.exteEvents %}
+        {% if onlyevent.id == eacheventid %}
+        {% assign checkmatch = true %}
+        {% break %}
+        {% endif %}
+        {% endfor %}
+        {% if checkmatch == true %}
+        {% assign eventscan = site.exteEvents %}
+        {% endif %}
+        {% endif %}
+
+        {% for onlyevent in eventscan %}
+        {% if onlyevent.id == eacheventid %}
+        {% assign eachevent = onlyevent %}
+        <div class="col-lg-4 col-md-4 col-sm-{% if bigforLength == 2 %}5{% elsif bigforLength == 1 %}6{% else %}4{% endif %} col-xs-12{% if bigforLength == 2 and bigforIndex == 1 %} col-lg-offset-2 col-md-offset-2 col-sm-offset-1 col-xs-offset-0{% elsif bigforLength == 1 and bigforIndex == 1 %} col-lg-offset-4 col-md-offset-4 col-sm-offset-3 col-xs-offset-0{% endif %}">
+          {% include panel-event.html %}
+        </div>
+        {% endif %}
+        {% endfor %}
+
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+  {% endif %}
+
   {% if site.switchActivitiesEventsInte == true %}
   <section class="section-gray">
     <a class="anchor" id="events-erehwon"></a>
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
-          <h1 class="h1-title text-center">Latest Erehwon Events</h1>
+          <h1 class="h1-title text-center">Latest Events</h1>
         </div>
       </div>
       <div class="row row-limit">
@@ -87,26 +147,33 @@ navHide: title
   {% endif %}
 
   {% if site.switchActivitiesEventsPast == true %}
-  <section class="section-gray{% if site.switchActivitiesEventsInte == true or site.switchActivitiesEventsExte == true or site.switchActivitiesEventsExtra == true %} section-link-prev{% endif %}">
+  <section class="section-light section-gray{% if site.switchActivitiesEventsMixed == true or site.switchActivitiesEventsInte == true or site.switchActivitiesEventsExte == true or site.switchActivitiesEventsExtra == true %} section-link-prev{% endif %}">
     <div class="container-fluid">
       <div class="row row-limit">
-        <div class="col-lg-12">
-          <h1 class="h1-title text-center">Gallery</h1>
+        <div class="col-lg-12 col-lg-offset-4 col-md-8 col-md-offset-4 col-sm-6 col-sm-offset-6 col-xs-12 col-xs-offset-0">
+          <h1 class="h1-title">Gallery</h1>
         </div>
       </div>
       {% for eachevent in site.pastEvents %}
       <a class="a-gallery" href="{{ site.baseurl }}/activities/event/gallery/{{ eachevent.id }}">
-        <div class="row row-limit">
-          <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-            <div class="embed-responsive embed-responsive-4by3">
-              <img class="img-responsive" src="{{site.baseurl}}/images/filler-320x240-1.jpg">
+        <div class="item-gallery">
+          <div class="row row-limit">
+            <div class="col-lg-4 col-md-4 col-sm-5 col-xs-12">
+              <div class="embed-responsive embed-responsive-4by3">
+                <img class="img-responsive" src="{{site.baseurl}}/images/events/{{ eachevent.id }}/cover.jpg">
+              </div>
             </div>
-          </div>
-          <div class="col-lg-8 col-md-8 col-sm-6 col-xs-12">
-            <h2>{{ eachevent.name }}</h2>
-            <p>
-              {{ eachevent.excerpt }}
-            </p>
+            <div class="col-lg-8 col-md-8 col-sm-7 col-xs-12">
+              <h2>{{ eachevent.name }}</h2>
+              <span>
+                {{ eachevent.organizer }}<br/>
+                {{ eachevent.venue }}
+              </span><br/><br/>
+              <p>
+                {{ eachevent.excerpt }}
+              </p>
+              <span class="btn btn-default">Read More</span>
+            </div>
           </div>
         </div>
       </a>

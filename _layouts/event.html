@@ -49,16 +49,17 @@ testCode: true
 
 {% if onlyevent.id == page.id %}
 
-<section class="section-gray section-allocate-top section-event-header" style="background-image:url('{{ site.baseurl }}/images/events/cover-large.jpg');">
+<section class="section-gray section-allocate-top section-event-header" style="background-image:url('{{ site.baseurl }}/images/events/{{ onlyevent.id }}/cover-large.jpg');">
   <div class="div-overlay-black">
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">
           <span class="span-artist">{{ onlyevent.organizer }}</span>
           <h1 class="h1-title">{{ onlyevent.name }}<br/>
-            <small>{{ onlyevent.sub }}</small>
+            {% if onlyevent.sub %}<small>{{ onlyevent.sub }}</small>{% endif %}
           </h1>
           <div class="span-details">
+            {% if onlyevent.day %}
             <span>
               {% for eachday in onlyevent.day %}
 
@@ -77,8 +78,9 @@ testCode: true
 
               {% endfor %}
             </span><br/>
-            <span>{{ onlyevent.venue }}</span><br/>
-            <span>{{ onlyevent.time }}</span>
+            {% endif %}
+            {% if onlyevent.venue %}<span>{{ onlyevent.venue }}</span><br/>{% endif %}
+            {% if onlyevent.time %}<span>{{ onlyevent.time }}</span>{% endif %}
           </div>
         </div>
       </div>
@@ -93,25 +95,7 @@ testCode: true
     <div class="container-fluid">
       <div class="row row-limit row-limit-article">
         <div class="col-lg-12">
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
-          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
-          volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
-          ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-          Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse
-          molestie consequat, vel illum dolore eu feugiat nulla facilisis at
-          vero eros et accumsan et iusto odio dignissim qui blandit praesent
-          luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
-          Nam liber tempor cum soluta nobis eleifend option congue nihil
-          imperdiet doming id quod mazim placerat facer possim assum. Typi non
-          habent claritatem insitam; est usus legentis in iis qui facit eorum
-          claritatem. Investigationes demonstraverunt lectores legere me lius
-          quod ii legunt saepius. Claritas est etiam processus dynamicus, qui
-          sequitur mutationem consuetudium lectorum. Mirum est notare quam
-          littera gothica, quam nunc putamus parum claram, anteposuerit
-          litterarum formas humanitatis per seacula quarta decima et quinta
-          decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant
-          sollemnes in futurum.
-          </p>
+          {{content}}
           </div>
         </div>
       </div>
@@ -119,7 +103,7 @@ testCode: true
   </section>
 
   {% if site.switchActivitiesEventsPhotos == true %}
-  {% if onlyevent.photos %}
+  {% if page.photos %}
   <section>
     <a class="anchor" id="works"></a>
     <div class="container-fluid">
@@ -134,8 +118,8 @@ testCode: true
         <div class="row row-limit">
           <div class="col-lg-12">
 
-            <div class="photoset-grid-lightbox" data-layout="{% for eachphoto in onlyevent.photos %}{% assign length = forloop.length %}{% break %}{% endfor %}{% assign modulo = length | modulo: 6 %}{% assign quotient = length | divided_by: 6 %}{% for i in (1..quotient) %}231{% endfor %}{% if modulo >= 2 and modulo != 3 %}2{% assign modulo = modulo | minus: 2 %}{% if modulo == 2 %}2{% assign modulo = modulo | minus: 2 %}{% endif %}{% endif %}{% if modulo >= 3 %}3{% assign modulo = modulo | minus: 3 %}{% endif %}{% if modulo >= 1 %}1{% assign modulo = modulo | minus: 1 %}{% endif %}" style="visibility: hidden;">
-              {% for eachphoto in onlyevent.photos %}
+            <div class="photoset-grid-lightbox" data-layout="{% if page.photolayout %}{{ page.photolayout }}{% else %}{% for eachphoto in page.photos %}{% assign length = forloop.length %}{% break %}{% endfor %}{% assign modulo = length | modulo: 6 %}{% assign quotient = length | divided_by: 6 %}{% for i in (1..quotient) %}231{% endfor %}{% if modulo >= 2 and modulo != 3 %}2{% assign modulo = modulo | minus: 2 %}{% if modulo == 2 %}2{% assign modulo = modulo | minus: 2 %}{% endif %}{% endif %}{% if modulo >= 3 %}3{% assign modulo = modulo | minus: 3 %}{% endif %}{% if modulo >= 1 %}1{% assign modulo = modulo | minus: 1 %}{% endif %}{% endif %}" style="visibility: hidden;">
+              {% for eachphoto in page.photos %}
               <img src="{{ site.baseurl }}/images/events/{{ onlyevent.id }}/{{ eachphoto.name }}" width="{{ eachphoto.width }}" height="{{ eachphoto.height }}">
               {% endfor %}
             </div>

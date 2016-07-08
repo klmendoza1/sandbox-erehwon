@@ -2,7 +2,7 @@
   <section class="section-footer-main">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-6 col-left">
+        <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12 col-left">
           <ul class="list-unstyled">
             <li><a href="{{ site.baseurl }}/">Home</a></li>
             {% if site.switchActivities == true %}
@@ -33,14 +33,16 @@
             {% endif %}
           </ul>
         </div>
-        <div class="col-lg-6 col-right">
-          <img class="img-responsive" src="{{ site.baseurl }}/images/logo-full-white.png">
-          <span><strong>Erehwon Art Center</strong></span><br/>
-          {% for eachline in site.address %}
-          <span>{{ eachline }}</span><br/>
-          {% endfor %}
-          <span>{{ site.number }}</span><br/>
-          <span>{{ site.email }}</span>
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12 col-right">
+          <div>
+            <img class="img-responsive" src="{{ site.baseurl }}/images/logo-full-color.png">
+            <span><strong>Erehwon Art Center</strong></span><br/>
+            {% for eachline in site.address %}
+            <span>{{ eachline }}</span><br/>
+            {% endfor %}
+            <span>{{ site.number }}</span><br/>
+            <span>{{ site.email }}</span>
+          </div>
         </div>
       </div>
     </div>

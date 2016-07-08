@@ -31,6 +31,7 @@
 					{% break %}
 				{% endif %}
 			{% endfor %}
+
 			{% if checkmatch == true %}
 				{% assign eventscan = site.inteEvents %}
 			{% else %}
@@ -42,27 +43,26 @@
 				{% endfor %}
 				{% if checkmatch == true %}
 					{% assign eventscan = site.exteEvents %}
-				{% endif %}
-			{% endif %}
-			{% if checkmatch == true %}
-				{% assign eventscan = site.exteEvents %}
-			{% else %}
-				{% for onlyevent in site.pastEvents %}
-					{% if onlyevent.id == page.id %}
-						{% assign checkmatch = true %}
-						{% break %}
+				{% else %}
+					{% for onlyevent in site.pastEvents %}
+						{% if onlyevent.id == page.id %}
+							{% assign checkmatch = true %}
+							{% break %}
+						{% endif %}
+					{% endfor %}
+					{% if checkmatch == true %}
+						{% assign eventscan = site.pastEvents %}
 					{% endif %}
-				{% endfor %}
-				{% if checkmatch == true %}
-					{% assign eventscan = site.pastEvents %}
 				{% endif %}
 			{% endif %}
+
 			{% for onlyevent in eventscan %}
 				{% if onlyevent.id == page.id %}
 				{{ onlyevent.name }}{{ ' - ' }}
 				{% endif %}
 			{% endfor %}
 			{{ 'Events | ' }}
+
 		{% elsif page.artistDrilldown == true %}
 			{% for onlyartist in site.artists %}
 				{% if onlyartist.id == page.id %}
@@ -71,6 +71,7 @@
 				{% endif %}
 			{% endfor %}
 			{{ 'Artists | ' }}
+
 		{% elsif page.productDrilldown %}
 			{% for onlyproduct in page.products %}
 				{% if onlyproduct.id == page.id %}
