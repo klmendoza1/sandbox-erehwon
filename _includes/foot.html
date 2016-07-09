@@ -189,37 +189,8 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 
 {% endif %}
 
-{% if page.artistDrilldown == true %}
 
-<!--script src="{{ site.baseurl }}/js/masonry.pkgd.min.js"></script-->
-
-<style>
-
-*, *:before, *:after {box-sizing:  border-box !important;}
-
-.row-masonry {
- -moz-column-width: 22em;
- -webkit-column-width: 22em;
- -moz-column-gap: .0em;
- -webkit-column-gap: .0em;
-}
-
-.row-masonry .panel {
- display: inline-block;
- margin:  .5em;
- padding:  0;
- width:96%;
-}
-
-.row-masonry .panel img {
- width: 100%;
-}
-
-</style>
-
-{% endif %}
-
-{% if page.eventDrilldown == true %}
+<!-- removed from condition; not loading otherwise -->
 
 <script src="{{ site.baseurl }}/js/jquery.photoset-grid.min.js"></script>
 <!--script src="{{ site.baseurl }}/js/jquery.colorbox.min.js"></script-->
@@ -235,12 +206,8 @@ $('.photoset-grid-lightbox').photosetGrid({
 });
 </script>
 
-{% endif %}
-
-{% if page.animate == true %}
   <!--script src="{{ site.baseurl }}js/wow.min.js"></script>
   <script>new WOW().init();</script-->
-{% endif %}
 
 {% if page.category == "about" %}
 

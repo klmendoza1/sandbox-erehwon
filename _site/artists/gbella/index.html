@@ -353,38 +353,24 @@ $('#exampleModal').on('show.bs.modal', function (event) {
 
 
 
+<!-- removed from condition; not loading otherwise -->
 
-<!--script src="http://erehwonartfoundation.org/js/masonry.pkgd.min.js"></script-->
+<script src="http://erehwonartfoundation.org/js/jquery.photoset-grid.min.js"></script>
+<!--script src="http://erehwonartfoundation.org/js/jquery.colorbox.min.js"></script-->
 
-<style>
+<script>
+$('.photoset-grid-lightbox').photosetGrid({
+  //highresLinks: true,
+  gutter: '15px',
 
-*, *:before, *:after {box-sizing:  border-box !important;}
+  onComplete: function(){
+    $('.photoset-grid-lightbox').attr('style', '');
+  }
+});
+</script>
 
-.row-masonry {
- -moz-column-width: 22em;
- -webkit-column-width: 22em;
- -moz-column-gap: .0em;
- -webkit-column-gap: .0em;
-}
-
-.row-masonry .panel {
- display: inline-block;
- margin:  .5em;
- padding:  0;
- width:96%;
-}
-
-.row-masonry .panel img {
- width: 100%;
-}
-
-</style>
-
-
-
-
-
-
+  <!--script src="http://erehwonartfoundation.orgjs/wow.min.js"></script>
+  <script>new WOW().init();</script-->
 
 
 

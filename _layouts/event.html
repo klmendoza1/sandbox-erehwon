@@ -133,7 +133,7 @@ layout: main
   {% endif %}
   {% endif %}
 
-  <section class="section-light section-link-prev{% if page.photos %} section-gray{% endif %}">
+  <section class="section-light section-link-prev{% if page.photos %} {% else %} section-gray{% endif %}">
     <div class="container-fluid">
       <div class="row row-limit">
         <div class="col-lg-12">

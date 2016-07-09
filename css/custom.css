@@ -407,3 +407,25 @@ a.anchor {
 .div-coreprogram {
   margin-bottom: 30px;
 }
+
+/* artist drilldown masonry css */
+
+*, *:before, *:after {box-sizing:  border-box !important;}
+
+.row-masonry {
+ -moz-column-width: 22em;
+ -webkit-column-width: 22em;
+ -moz-column-gap: .0em;
+ -webkit-column-gap: .0em;
+}
+
+.row-masonry .panel {
+ display: inline-block;
+ margin:  .5em;
+ padding:  0;
+ width:96%;
+}
+
+.row-masonry .panel img {
+ width: 100%;
+}
